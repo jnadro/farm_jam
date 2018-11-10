@@ -77,6 +77,6 @@ animation = "Up"
 
 frames = SubResource( 1 )
 animation = "Down"
-frame = 1
+frame = 0
 
 

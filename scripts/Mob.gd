@@ -22,7 +22,8 @@ func _process(delta):
 
 # Update position to follow player
 func _physics_process(delta):
-	var direction = (player.position - position).normalized() * speed
+	var currentSpeed = minimum_distance_to_player()
+	var direction = (player.position - position).normalized() * currentSpeed
 	move_and_slide(direction * delta)
 	velocity = position - prev_pos
 	prev_pos = position
@@ -69,6 +70,12 @@ func get_facing_direction(velocity):
 func update_shadow_sprite (direction):
 	if $ShadowSprite:
 		$ShadowSprite.animation = direction
+
+func minimum_distance_to_player():
+	if position.distance_to(player.position) <= 32:
+		return 0;
+	else:
+		return speed
 
 func damage(dmg):
 	health -= dmg
