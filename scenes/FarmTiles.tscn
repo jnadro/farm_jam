@@ -2,7 +2,7 @@
 
 [ext_resource path="res://resources/textures/plowed_soil.png" type="Texture" id=1]
 
-[node name="FarmTiles" type="Node" index="0"]
+[node name="FarmTiles" type="Node"]
 
 [node name="0" type="Sprite" parent="." index="0"]
 
