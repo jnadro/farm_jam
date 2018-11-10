@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/textures/GlassPanel.png" type="Texture" id=2]
 [ext_resource path="res://resources/textures/ProgressBar.png" type="Texture" id=3]
 
-[node name="ProgressBar" type="Node2D" index="0"]
+[node name="ProgressBar" type="Node2D"]
 
 scale = Vector2( 0.25, 0.25 )
 z_index = 1

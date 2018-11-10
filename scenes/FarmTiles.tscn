@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://resources/textures/plowed_soil.png" type="Texture" id=1]
+
+[node name="FarmTiles" type="Node" index="0"]
+
+[node name="0" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 60, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 120, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 120, 50 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 96, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 60, 50 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 96, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="5" type="Sprite" parent="." index="5"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 96, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="6" type="Sprite" parent="." index="6"]
+
+position = Vector2( 0, 100 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 128, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="7" type="Sprite" parent="." index="7"]
+
+position = Vector2( 60, 100 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 128, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="8" type="Sprite" parent="." index="8"]
+
+position = Vector2( 120, 100 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 128, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="9" type="Sprite" parent="." index="9"]
+
+position = Vector2( 120, 150 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 160, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="10" type="Sprite" parent="." index="10"]
+
+position = Vector2( 60, 150 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 160, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="11" type="Sprite" parent="." index="11"]
+
+position = Vector2( 0, 150 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 160, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="12" type="Sprite" parent="." index="12"]
+
+position = Vector2( 0, 200 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 192, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+
