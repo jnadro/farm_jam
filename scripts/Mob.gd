@@ -16,41 +16,12 @@ func _ready():
 	prev_pos = position
 
 func _process(delta):
-	var xMag = velocity.x * velocity.x
-	var yMag = velocity.y * velocity.y
-
-	if velocity.x > 0 and velocity.y == 0:
-	    $AnimatedSprite.animation = "Right"
-	elif velocity.y < 0 and velocity.x == 0:
-	    $AnimatedSprite.animation = "Up"
-	elif velocity.y > 0 and velocity.x == 0:
-		$AnimatedSprite.animation = "Down"
-	elif velocity.y == 0 and velocity.x < 0:
-		$AnimatedSprite.animation = "Left"
-	elif velocity.y > 0 and velocity.x > 0:
-		if xMag < yMag:
-			$AnimatedSprite.animation = "Down"
-		else:
-			$AnimatedSprite.animation = "Right"
-	elif velocity.y < 0 and velocity.x > 0:
-		if xMag < yMag:
-			$AnimatedSprite.animation = "Up"
-		else:
-			$AnimatedSprite.animation = "Right"
-	elif velocity.y < 0 and velocity.x < 0:
-		if xMag < yMag:
-			$AnimatedSprite.animation = "Up"
-		else:
-			$AnimatedSprite.animation = "Left"
-	elif velocity.y > 0 and velocity.x < 0:
-		if xMag < yMag:
-			$AnimatedSprite.animation = "Down"
-		else:
-			$AnimatedSprite.animation = "Left"
+	var facing_direction = get_facing_direction(velocity)
+	$AnimatedSprite.animation = facing_direction
+	update_shadow_sprite(facing_direction)
 
 # Update position to follow player
 func _physics_process(delta):
-
 	var direction = (player.position - position).normalized() * speed
 	move_and_slide(direction * delta)
 	velocity = position - prev_pos
@@ -59,6 +30,45 @@ func _physics_process(delta):
 # Delete themselves when they leave the screen
 func _on_Visibility_screen_exited():
     queue_free()
+
+func get_facing_direction(velocity):
+	var xMag = velocity.x * velocity.x
+	var yMag = velocity.y * velocity.y
+	
+	if velocity.x > 0 and velocity.y == 0:
+		return "Right"
+	elif velocity.y < 0 and velocity.x == 0:
+		return "Up"
+	elif velocity.y > 0 and velocity.x == 0:
+		return "Down"
+	elif velocity.y == 0 and velocity.x < 0:
+		return "Left"
+	elif velocity.y > 0 and velocity.x > 0:
+		if xMag < yMag:
+			return "Down"
+		else:
+			return "Right"
+	elif velocity.y < 0 and velocity.x > 0:
+		if xMag < yMag:
+			return "Up"
+		else:
+			return "Right"
+	elif velocity.y < 0 and velocity.x < 0:
+		if xMag < yMag:
+			return "Up"
+		else:
+			return "Left"
+	elif velocity.y > 0 and velocity.x < 0:
+		if xMag < yMag:
+			return "Down"
+		else:
+			return "Left"
+			
+	return $AnimatedSprite.animation;
+	
+func update_shadow_sprite (direction):
+	if $ShadowSprite:
+		$ShadowSprite.animation = direction
 
 func damage(dmg):
 	health -= dmg

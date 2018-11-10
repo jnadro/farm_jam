@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=2]
-[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=3]
-[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=4]
-[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=9]
 [ext_resource path="res://resources/textures/chicken/up/Image10000.png" type="Texture" id=10]
 [ext_resource path="res://resources/textures/chicken/up/Image10001.png" type="Texture" id=11]
 [ext_resource path="res://resources/textures/chicken/up/Image10002.png" type="Texture" id=12]
@@ -24,12 +24,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
@@ -47,7 +47,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.4217, 13.1305 )
+extents = Vector2( 16.4217, 14.7831 )
 
 [node name="Mob" type="KinematicBody2D"]
 
@@ -66,7 +66,6 @@ health = null
 position = Vector2( 0.209351, 0 )
 frames = SubResource( 1 )
 animation = "Right"
-frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -75,6 +74,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0, 0.291988 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material" ]
 
