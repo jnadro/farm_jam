@@ -1,56 +1,56 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/player/E.png" type="Texture" id=2]
-[ext_resource path="res://resources/textures/player/W.png" type="Texture" id=3]
-[ext_resource path="res://resources/textures/player/N.png" type="Texture" id=4]
-[ext_resource path="res://resources/textures/player/NE.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/player/S.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/player/SW.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/player/NW.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/player/SE.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/player/N.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/player/SE.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/player/SW.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/player/S.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/player/NE.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/player/NW.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/player/E.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/player/W.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Right",
+"name": "Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Left",
+"name": "DownRight",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Up",
+"name": "DownLeft",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "UpRight",
+"name": "Down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Down",
+"name": "UpRight",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "DownLeft",
+"name": "UpLeft",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "UpLeft",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "DownRight",
+"name": "Left",
 "speed": 5.0
 } ]
 
@@ -69,7 +69,9 @@ extents = Vector2( 7.50065, 17.1976 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0" groups=[
+"Player",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
