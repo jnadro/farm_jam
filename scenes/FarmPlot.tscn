@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/CropSpawn.tscn" type="PackedScene" id=2]
+
+[node name="FarmPlot" type="Node2D"]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 2, 0, 65536, 5, 0, 65540, 3, 0, 131072, 5, 0, 131076, 3, 0, 196608, 5, 0, 196612, 3, 0, 262144, 6, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 262148, 8, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="CropSpawn" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 32, 32 )
+
+[node name="CropSpawn2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 64, 32 )
+
+[node name="CropSpawn3" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 96, 32 )
+
+[node name="CropSpawn4" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 96, 64 )
+
+[node name="CropSpawn5" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 64, 64 )
+
+[node name="CropSpawn6" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 32, 64 )
+
+[node name="CropSpawn7" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 32, 96 )
+
+[node name="CropSpawn8" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 64, 96 )
+
+[node name="CropSpawn9" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 96, 96 )
+
+

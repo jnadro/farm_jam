@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/CropSpawn.gd" type="Script" id=1]
+[ext_resource path="res://resources/textures/plowed_soil.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+
+flags = 0
+atlas = ExtResource( 2 )
+region = Rect2( 32, 96, 32, 32 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.017, 15.9296 )
+
+[node name="CropSpawn" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = SubResource( 1 )
+centered = false
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( 15.9432, 15.9432 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Highlight" type="Polygon2D" parent="." index="2"]
+
+visible = false
+polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+uv = PoolVector2Array(  )
+color = Color( 0.307401, 0.617188, 0.220661, 0.498039 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Visibility" ]
+
+[connection signal="input_event" from="." to="." method="_on_CropSpawn_input_event"]
+
+[connection signal="mouse_entered" from="." to="." method="_on_CropSpawn_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_CropSpawn_mouse_exited"]
+
+
