@@ -1,8 +1,8 @@
 extends Area2D
 
 # class member variables go here, for example:
-onready var ProgressBar = preload("res://Scenes/ProgressBar.tscn")
-onready var Crop = preload("res://Scenes/Crop.tscn")
+onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
+onready var Crop = preload("res://scenes/Crop.tscn")
 var pressed = false
 var progress_bar = null
 var planting_time = 1.0

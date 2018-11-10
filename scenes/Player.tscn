@@ -1,0 +1,287 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://resources/textures/player/E.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/player/W.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/player/N.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/player/NE.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/player/S.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/player/SW.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/player/NW.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/player/SE.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "UpRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "DownLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "UpLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "DownRight",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 17.1419, 17.0866 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.50065, 17.1976 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Player" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+speed = 400
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Right"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.231964, -0.463925 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HitboxRight" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 0.125343, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxRight" index="0"]
+
+position = Vector2( 23.747, -0.418701 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="HitboxLeft" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 0, -0.112616 )
+scale = Vector2( 1, 0.996481 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxShape1" type="CollisionShape2D" parent="HitboxLeft" index="0"]
+
+position = Vector2( -24.2599, -0.418701 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="HitboxDown" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 0.501377, -0.125343 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxShape2" type="CollisionShape2D" parent="HitboxDown" index="0"]
+
+position = Vector2( -0.56983, 23.5221 )
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="HitboxUp" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 0.376034, -48.0068 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxShape2" type="CollisionShape2D" parent="HitboxUp" index="0"]
+
+position = Vector2( -0.56983, 23.5221 )
+rotation = 1.5708
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="HitboxUpLeft" type="Area2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( -21.5592, -21.1832 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxUpLeft" index="0"]
+
+position = Vector2( 5.64049, 5.01377 )
+scale = Vector2( 1.58127, 1.58609 )
+shape = SubResource( 4 )
+
+[node name="HitboxUpRight" type="Area2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 10.0275, -21.1832 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxUpRight" index="0"]
+
+position = Vector2( 5.64049, 5.01377 )
+scale = Vector2( 1.58127, 1.58609 )
+shape = SubResource( 4 )
+
+[node name="HitboxDownRight" type="Area2D" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 10.0275, 10.2782 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxDownRight" index="0"]
+
+position = Vector2( 5.64049, 5.01377 )
+scale = Vector2( 1.58127, 1.58609 )
+shape = SubResource( 4 )
+
+[node name="HitboxDownLeft" type="Area2D" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( -21.5592, 10.2782 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxDownLeft" index="0"]
+
+position = Vector2( 5.64049, 5.01377 )
+scale = Vector2( 1.58127, 1.58609 )
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = true
+autostart = false
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+
