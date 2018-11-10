@@ -16,7 +16,7 @@ filter_clip = false
 custom_solver_bias = 0.0
 extents = Vector2( 16.017, 15.9296 )
 
-[node name="CropSpawn" type="Area2D"]
+[node name="CropSpawn" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -57,6 +57,10 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 _sections_unfolded = [ "Visibility" ]
+
+[connection signal="area_entered" from="." to="." method="_on_CropSpawn_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_CropSpawn_area_exited"]
 
 [connection signal="input_event" from="." to="." method="_on_CropSpawn_input_event"]
 
