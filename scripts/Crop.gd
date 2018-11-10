@@ -5,6 +5,7 @@ signal harvestable
 # class member variables go here, for example:
 export(float) var growth_time = 5.0
 var harvestable = false
+var planted_position = null
 
 func _ready():
 	var sprite_frames = $AnimatedSprite.get_sprite_frames()
@@ -23,6 +24,7 @@ func _process(delta):
 
 func _on_GrowthTimer_timeout():
 	harvestable = true
+	planted_position = position
 	emit_signal("harvestable")
 	$WiggleTimer.start()
 
@@ -31,5 +33,6 @@ func _on_WiggleTimer_timeout():
 	var s = Vector2(randf() * 2.0, 0)
 	var d = Vector2(randf() * 2.0, 0)
 	var wiggle_duration = randf() * 2.0
+	position = planted_position
 	$WiggleTween.interpolate_property(self, 'position', position - s, position + d, wiggle_duration, Tween.TRANS_BOUNCE, Tween.EASE_OUT_IN)
 	$WiggleTween.start()
