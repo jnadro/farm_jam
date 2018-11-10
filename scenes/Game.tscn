@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/CollectionBox.tscn" type="PackedScene" id=3]
 
 [node name="Game" type="Node" index="0"]
 
@@ -49,5 +50,9 @@ position = Vector2( 416, 352 )
 [node name="FarmPlot6" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 416, 96 )
+
+[node name="CollectionBox" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 480, 288 )
 
 
