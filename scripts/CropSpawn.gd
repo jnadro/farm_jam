@@ -41,29 +41,24 @@ func _planting_completed():
 	stop_progress()
 	
 	crop = Crop.instance()
-	crop.growth_time = 1.0
 	add_child(crop)
-
-
-func _on_CropSpawn_mouse_entered():
-	if !occupied() && player_nearby:
-		$Highlight.show()
 
 
 func _on_CropSpawn_mouse_exited():
 	if progress_bar:
 		stop_progress()
-	$Highlight.hide()
 
 
 func _on_CropSpawn_area_entered(area):
 	if area.is_in_group("Player"):
+		if !occupied():
+			$Highlight.show()		
 		player_nearby = true
 
 
 func _on_CropSpawn_area_exited(area):
 	if area.is_in_group("Player"):
+		$Highlight.hide()
 		player_nearby = false
 		if progress_bar:
 			stop_progress()
-			$Highlight.hide()
