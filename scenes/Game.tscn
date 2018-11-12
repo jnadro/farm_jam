@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/SeedPouch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=9]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 [node name="Level" type="TileMap" parent="." index="0"]
 
@@ -343,6 +343,8 @@ type = "Potato"
 [node name="SeedPouch" parent="." index="12" instance=ExtResource( 8 )]
 
 [node name="HUD" parent="." index="13" instance=ExtResource( 9 )]
+
+[connection signal="picked_up" from="Seed" to="HUD" method="_on_Seed_picked_up"]
 
 [connection signal="picked_up" from="Seed" to="SeedPouch" method="_on_Seed_picked_up"]
 
