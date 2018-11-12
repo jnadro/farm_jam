@@ -27,7 +27,19 @@ func has_seeds():
 func get_seed():
 	if has_seeds():
 		seed_counts[active_seed] -= 1
-		return 
+		return
+		
+func get_artichoke_seed_count():
+	return seed_counts["Artichoke"]
+	
+func get_cucumber_seed_count():
+	return seed_counts["Cucumber"]
+
+func get_potato_seed_count():
+	return seed_counts["Potato"]
+	
+func get_tomato_seed_count():
+	return seed_counts["Tomato"]
 
 func _on_Seed_picked_up():
 	print("Seed added to pouch!")
