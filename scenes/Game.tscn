@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://scenes/TreeEdge.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/SeedPouch.tscn" type="PackedScene" id=8]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Level" type="TileMap" parent="." index="0"]
 
@@ -59,6 +61,8 @@ position = Vector2( 416, 96 )
 position = Vector2( 480, 288 )
 
 [node name="Collision" type="Node" parent="." index="8"]
+
+editor/display_folded = true
 
 [node name="TreeEdge" parent="Collision" index="0" instance=ExtResource( 4 )]
 
@@ -270,54 +274,54 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 32, 544 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TreeEdge51" parent="Collision" index="42" instance=ExtResource( 4 )]
+[node name="TreeEdge42" parent="Collision" index="42" instance=ExtResource( 4 )]
 
-position = Vector2( -64, -32 )
+position = Vector2( -32, 544 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TreeEdge50" parent="Collision" index="43" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 32 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge49" parent="Collision" index="44" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 96 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge48" parent="Collision" index="45" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 160 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge47" parent="Collision" index="46" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 224 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge46" parent="Collision" index="47" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 288 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge45" parent="Collision" index="48" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 352 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge44" parent="Collision" index="49" instance=ExtResource( 4 )]
-
-position = Vector2( -64, 416 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TreeEdge43" parent="Collision" index="50" instance=ExtResource( 4 )]
+[node name="TreeEdge43" parent="Collision" index="43" instance=ExtResource( 4 )]
 
 position = Vector2( -64, 480 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TreeEdge42" parent="Collision" index="51" instance=ExtResource( 4 )]
+[node name="TreeEdge44" parent="Collision" index="44" instance=ExtResource( 4 )]
 
-position = Vector2( -32, 544 )
+position = Vector2( -64, 416 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge45" parent="Collision" index="45" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 352 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge46" parent="Collision" index="46" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 288 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge47" parent="Collision" index="47" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 224 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge48" parent="Collision" index="48" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 160 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge49" parent="Collision" index="49" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 96 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge50" parent="Collision" index="50" instance=ExtResource( 4 )]
+
+position = Vector2( -64, 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TreeEdge51" parent="Collision" index="51" instance=ExtResource( 4 )]
+
+position = Vector2( -64, -32 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="." index="9" groups=[
@@ -325,10 +329,18 @@ _sections_unfolded = [ "Transform" ]
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 590.542, 311.845 )
-speed = 200
 
 [node name="Mob" parent="." index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 396.559, 310.618 )
+
+[node name="Seed" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 608, 96 )
+type = "Potato"
+
+[node name="SeedPouch" parent="." index="12" instance=ExtResource( 8 )]
+
+[connection signal="picked_up" from="Seed" to="SeedPouch" method="_on_Seed_picked_up"]
 
 
