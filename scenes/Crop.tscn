@@ -23,7 +23,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 15.6121, 15.4949 )
 
-[node name="Crop" type="Area2D"]
+[node name="Crop" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -34,7 +34,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-growth_time = 25.0
+growth_time = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -73,6 +73,31 @@ process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
+
+[node name="Highlight" type="Polygon2D" parent="." index="5"]
+
+visible = false
+polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+uv = PoolVector2Array(  )
+color = Color( 0.14389, 0.800781, 0.215738, 0.480667 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Visibility" ]
+
+[connection signal="area_entered" from="." to="." method="_on_Crop_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_Crop_area_exited"]
+
+[connection signal="input_event" from="." to="." method="_on_Crop_input_event"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_Crop_mouse_exited"]
 
 [connection signal="timeout" from="GrowthTimer" to="." method="_on_GrowthTimer_timeout"]
 
