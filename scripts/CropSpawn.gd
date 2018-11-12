@@ -1,6 +1,7 @@
 extends Area2D
 
 # class member variables go here, for example:
+onready var seed_pouch = get_node("/root/Game/SeedPouch")
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
 var pressed = false
@@ -27,7 +28,7 @@ func stop_progress():
 
 func _on_CropSpawn_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if !occupied() && player_nearby:
+		if !occupied() && player_nearby && seed_pouch.has_seeds():
 			if event.pressed:
 				pressed = true
 				progress_bar = ProgressBar.instance()
@@ -40,6 +41,7 @@ func _on_CropSpawn_input_event(viewport, event, shape_idx):
 func _planting_completed():
 	stop_progress()
 	
+	var crop_seed = seed_pouch.get_seed() 
 	crop = Crop.instance()
 	add_child(crop)
 

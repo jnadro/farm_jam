@@ -3,6 +3,7 @@ extends Node
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var active_seed = "Potato"
 var seed_counts = {
 	"Artichoke": 0,
 	"Cucumber": 0,
@@ -19,6 +20,14 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+func has_seeds():
+	return seed_counts[active_seed] > 0
+	
+func get_seed():
+	if has_seeds():
+		seed_counts[active_seed] -= 1
+		return 
 
 func _on_Seed_picked_up():
 	print("Seed added to pouch!")
