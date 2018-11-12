@@ -1,8 +1,7 @@
 extends Node
 
 # class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+onready var hud = get_node("/root/Game/HUD")
 var active_seed = "Potato"
 var seed_counts = {
 	"Artichoke": 0,
@@ -27,6 +26,7 @@ func has_seeds():
 func get_seed():
 	if has_seeds():
 		seed_counts[active_seed] -= 1
+		hud.update_labels(seed_counts)		
 		return
 		
 func get_artichoke_seed_count():
@@ -44,4 +44,5 @@ func get_tomato_seed_count():
 func _on_Seed_picked_up():
 	print("Seed added to pouch!")
 	seed_counts["Potato"] += 1
+	hud.update_labels(seed_counts)
 	print(seed_counts)

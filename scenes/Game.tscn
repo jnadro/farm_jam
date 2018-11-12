@@ -344,8 +344,6 @@ type = "Potato"
 
 [node name="HUD" parent="." index="13" instance=ExtResource( 9 )]
 
-[connection signal="picked_up" from="Seed" to="HUD" method="_on_Seed_picked_up"]
-
 [connection signal="picked_up" from="Seed" to="SeedPouch" method="_on_Seed_picked_up"]
 
 

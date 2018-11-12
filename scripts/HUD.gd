@@ -13,9 +13,8 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
-func _on_Seed_picked_up():
-	$ArtichokeSeedLabel.text = str(seed_pouch.get_artichoke_seed_count())
-	$CucumberSeedLabel.text = str(seed_pouch.get_cucumber_seed_count())
-	$PotatoSeedLabel.text = str(seed_pouch.get_potato_seed_count())	
-	$TomatoSeedLabel.text = str(seed_pouch.get_tomato_seed_count())
+func update_labels(seed_counts):
+	$ArtichokeSeedLabel.text = str(seed_counts["Artichoke"])
+	$CucumberSeedLabel.text = str(seed_counts["Cucumber"])
+	$PotatoSeedLabel.text = str(seed_counts["Potato"])
+	$TomatoSeedLabel.text = str(seed_counts["Tomato"])
