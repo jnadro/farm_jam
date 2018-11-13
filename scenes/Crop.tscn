@@ -34,7 +34,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-growth_time = 25.0
+growth_time = 1.0
+sell_price = 60
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

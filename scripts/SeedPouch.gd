@@ -9,6 +9,7 @@ var seed_counts = {
 	"Potato": 0,
 	"Tomato": 0,
 }
+var coin_count = 0
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -26,7 +27,7 @@ func has_seeds():
 func get_seed():
 	if has_seeds():
 		seed_counts[active_seed] -= 1
-		hud.update_labels(seed_counts)		
+		hud.update_labels(seed_counts, coin_count)		
 		return
 		
 func get_artichoke_seed_count():
@@ -40,9 +41,14 @@ func get_potato_seed_count():
 	
 func get_tomato_seed_count():
 	return seed_counts["Tomato"]
+	
+func get_coin_count():
+	return coin_count
+	
+func add_coins(num_coins):
+	coin_count += num_coins
+	hud.update_labels(seed_counts, coin_count)	
 
 func _on_Seed_picked_up():
-	print("Seed added to pouch!")
 	seed_counts["Potato"] += 1
-	hud.update_labels(seed_counts)
-	print(seed_counts)
+	hud.update_labels(seed_counts, coin_count)

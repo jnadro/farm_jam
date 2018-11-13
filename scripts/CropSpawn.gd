@@ -3,6 +3,7 @@ extends Area2D
 # class member variables go here, for example:
 enum STATES { PLANT, GROWING, HARVEST }
 onready var seed_pouch = get_node("/root/Game/SeedPouch")
+onready var collection_box = get_node("/root/Game/CollectionBox")
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
 var state = STATES.PLANT
@@ -67,6 +68,8 @@ func _on_crop_harvestable():
 
 func _harvest_completed():
 	print("Harvest completed")
+	seed_pouch.add_coins(crop.sell_price)
+	remove_child(crop)
 	stop_progress()
 	state = STATES.PLANT
 

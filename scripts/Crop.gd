@@ -4,6 +4,7 @@ signal harvestable
 
 # class member variables go here, for example:
 export(float) var growth_time = 5.0
+export(int) var sell_price = 60
 var harvestable = false
 var planted_position = null
 
