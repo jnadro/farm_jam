@@ -56,7 +56,7 @@ func _planting_completed():
 	stop_progress()
 	
 	var crop_seed = seed_pouch.get_seed() 
-	crop = Crop.instance()
+	crop = crop_seed.spawn_crop()
 	crop.connect("harvestable", self, "_on_crop_harvestable")
 	add_child(crop)
 	$Highlight.hide()

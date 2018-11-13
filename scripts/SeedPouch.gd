@@ -2,6 +2,7 @@ extends Node
 
 # class member variables go here, for example:
 onready var hud = get_node("/root/Game/HUD")
+onready var seed_scene = preload("res://scenes/Seed.tscn")
 var active_seed = "Potato"
 var seed_counts = {
 	"Artichoke": 0,
@@ -28,7 +29,7 @@ func get_seed():
 	if has_seeds():
 		seed_counts[active_seed] -= 1
 		hud.update_labels(seed_counts, coin_count)		
-		return
+		return seed_scene.instance()
 		
 func get_artichoke_seed_count():
 	return seed_counts["Artichoke"]
