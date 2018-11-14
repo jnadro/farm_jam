@@ -14,6 +14,10 @@ config/name="Farm Jam"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameState="*res://scripts/GameState.gd"
+
 [display]
 
 window/stretch/mode="2d"

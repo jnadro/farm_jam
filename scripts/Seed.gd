@@ -7,8 +7,8 @@ export (String) var type
 var crop_script = preload("res://scenes/Crop.tscn")
 var taken = false
 
-#func _ready():
-#	pass
+func _ready():
+	connect("picked_up", GameState, "_on_Seed_picked_up")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

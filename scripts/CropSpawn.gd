@@ -2,7 +2,6 @@ extends Area2D
 
 # class member variables go here, for example:
 enum STATES { PLANT, GROWING, HARVEST }
-onready var seed_pouch = get_node("/root/Game/SeedPouch")
 onready var collection_box = get_node("/root/Game/CollectionBox")
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
@@ -38,7 +37,7 @@ func stop_progress():
 func _on_CropSpawn_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if state == STATES.PLANT:
-			if !occupied() && player_nearby && seed_pouch.has_seeds():
+			if !occupied() && player_nearby && GameState.has_seeds():
 				if event.pressed:
 					pressed = true
 					start_progress("_planting_completed")
@@ -55,7 +54,7 @@ func _on_CropSpawn_input_event(viewport, event, shape_idx):
 func _planting_completed():
 	stop_progress()
 	
-	var crop_seed = seed_pouch.get_seed() 
+	var crop_seed = GameState.get_seed() 
 	crop = crop_seed.spawn_crop()
 	crop.connect("harvestable", self, "_on_crop_harvestable")
 	add_child(crop)
@@ -68,7 +67,7 @@ func _on_crop_harvestable():
 
 func _harvest_completed():
 	print("Harvest completed")
-	seed_pouch.add_coins(crop.sell_price)
+	GameState.add_coins(crop.sell_price)
 	remove_child(crop)
 	stop_progress()
 	state = STATES.PLANT

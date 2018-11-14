@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/SeedPouch.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node" index="0"]
 
@@ -340,10 +339,6 @@ position = Vector2( 396.559, 310.618 )
 position = Vector2( 608, 96 )
 type = "Potato"
 
-[node name="SeedPouch" parent="." index="12" instance=ExtResource( 8 )]
-
-[node name="HUD" parent="." index="13" instance=ExtResource( 9 )]
-
-[connection signal="picked_up" from="Seed" to="SeedPouch" method="_on_Seed_picked_up"]
+[node name="HUD" parent="." index="12" instance=ExtResource( 8 )]
 
 

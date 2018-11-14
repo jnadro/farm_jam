@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 # class member variables go here, for example:
-onready var seed_pouch = get_node("/root/Game/SeedPouch")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -13,9 +12,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func update_labels(seed_counts, coin_count):
-	$ArtichokeSeedLabel.text = str(seed_counts["Artichoke"])
-	$CucumberSeedLabel.text = str(seed_counts["Cucumber"])
-	$PotatoSeedLabel.text = str(seed_counts["Potato"])
-	$TomatoSeedLabel.text = str(seed_counts["Tomato"])
-	$CoinCountLabel.text = str(coin_count)
+func update_labels():
+	$ArtichokeSeedLabel.text = str(GameState.seed_counts["Artichoke"])
+	$CucumberSeedLabel.text = str(GameState.seed_counts["Cucumber"])
+	$PotatoSeedLabel.text = str(GameState.seed_counts["Potato"])
+	$TomatoSeedLabel.text = str(GameState.seed_counts["Tomato"])
+	$CoinCountLabel.text = str(GameState.coin_count)
