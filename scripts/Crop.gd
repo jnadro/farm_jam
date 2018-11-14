@@ -3,6 +3,7 @@ extends Node2D
 signal harvestable
 
 # class member variables go here, for example:
+export(String) var crop_type = "potato"
 export(float) var growth_time = 5.0
 export(int) var sell_price = 60
 var harvestable = false
@@ -10,6 +11,15 @@ var planted_position = null
 
 func _ready():
 	var sprite_frames = $AnimatedSprite.get_sprite_frames()
+	sprite_frames.add_animation("Grow")
+	sprite_frames.set_animation_loop("Grow", false)
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/Seed.png"))
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage1.png"))
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage2.png"))
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage3.png"))
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/StageHarvest.png"))
+	sprite_frames.add_frame("Grow", preload("res://resources/textures/Potato.png"))
+	
 	var fps = sprite_frames.get_frame_count("Grow") / growth_time
 	sprite_frames.set_animation_speed("Grow", fps )
 	$AnimatedSprite.play()
