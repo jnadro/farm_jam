@@ -64,7 +64,6 @@ func _on_crop_harvestable():
 	state = STATES.HARVEST
 
 func _harvest_completed():
-	print("Harvest completed")
 	GameState.add_coins(crop.sell_price)
 	remove_child(crop)
 	stop_progress()
