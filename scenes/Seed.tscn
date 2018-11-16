@@ -1,14 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Seed.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/terrain_atlas.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Seed" type="Area2D" index="0"]
+[node name="Seed" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -18,7 +17,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-type = "Null"
+type = "potato"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -29,9 +28,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
 centered = false
-region_enabled = true
 region_rect = Rect2( 800, 672, 32, 32 )
 _sections_unfolded = [ "Offset", "Region" ]
 

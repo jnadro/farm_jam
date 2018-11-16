@@ -3,11 +3,13 @@ extends Area2D
 signal picked_up(_seed)
 
 # class member variables go here, for example:
-export (String) var type = "Tomato"
+export (String) var type = "potato"
 var crop_scene = null
 var taken = false
 
 func _ready():
+	var resource_path = "res://resources/textures/" + type + "/"
+	$Sprite.texture = load(resource_path + "Seeds.png")
 	connect("picked_up", GameState, "_on_Seed_picked_up")
 
 #func _process(delta):
