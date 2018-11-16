@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Level" type="TileMap" parent="." index="0"]
 
@@ -334,11 +334,26 @@ position = Vector2( 590.542, 311.845 )
 
 position = Vector2( 396.559, 310.618 )
 
-[node name="Seed" parent="." index="11" instance=ExtResource( 7 )]
+[node name="Tomato" parent="." index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 608, 96 )
+type = "Tomato"
+
+[node name="Potato" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 704, 448 )
 type = "Potato"
 
-[node name="HUD" parent="." index="12" instance=ExtResource( 8 )]
+[node name="Artichoke" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 288, 128 )
+type = "Artichoke"
+
+[node name="Cucumber" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 352, 448 )
+type = "Cucumber"
+
+[node name="HUD" parent="." index="15" instance=ExtResource( 8 )]
 
 

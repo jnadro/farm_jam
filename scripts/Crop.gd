@@ -13,12 +13,16 @@ func _ready():
 	var sprite_frames = $AnimatedSprite.get_sprite_frames()
 	sprite_frames.add_animation("Grow")
 	sprite_frames.set_animation_loop("Grow", false)
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/Seed.png"))
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage1.png"))
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage2.png"))
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/Stage3.png"))
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/StageHarvest.png"))
-	sprite_frames.add_frame("Grow", preload("res://resources/textures/Potato.png"))
+	var resource_path = "res://resources/textures/" + crop_type + "/"
+	print(resource_path)
+	print(crop_type)
+	print("\n")
+	sprite_frames.add_frame("Grow", load(resource_path + "Seed.png"))
+	sprite_frames.add_frame("Grow", load(resource_path + "Stage1.png"))
+	sprite_frames.add_frame("Grow", load(resource_path + "Stage2.png"))
+	sprite_frames.add_frame("Grow", load(resource_path + "Stage3.png"))
+	sprite_frames.add_frame("Grow", load(resource_path + "Stage4.png"))	
+	sprite_frames.add_frame("Grow", load(resource_path + crop_type + ".png"))
 	
 	var fps = sprite_frames.get_frame_count("Grow") / growth_time
 	sprite_frames.set_animation_speed("Grow", fps )

@@ -1,46 +1,53 @@
 extends Node
 
+# constants
+const TILE_SIZE = 32
+
 # class member variables go here, for example:
 onready var hud = get_node("/root/Game/HUD")
-onready var seed_scene = preload("res://scenes/Seed.tscn")
 
-var active_seed = "Potato"
-var seed_counts = {
-	"Artichoke": 0,
-	"Cucumber": 0,
-	"Potato": 0,
-	"Tomato": 0,
-}
+var crop_names = ["Artichoke", "Cucumber", "Potato", "Tomato"]
+
+var equipped_seed_index = 0
+# dictionary that map crop name string to counts
+var seed_counts = {}
+# dictionary that map crop name string to scenes
+var crop_scenes = {}
+var picked_up_seed = null
 var coin_count = 0
 var score = 0
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	for crop in crop_names:
+		seed_counts[crop] = 0
+		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
+	print(crop_scenes)
 	
 func has_seeds():
-	return seed_counts[active_seed] > 0
-	
-func get_seed():
+	return seed_counts[crop_names[equipped_seed_index]] > 0
+		
+func plant_active_crop():
 	if has_seeds():
-		seed_counts[active_seed] -= 1
+		var seed_name = crop_names[equipped_seed_index]
+		seed_counts[seed_name] -= 1
 		hud.update_labels()
-		var seed_instance = seed_scene.instance()
-		seed_instance.connect("picked_up", self, "_on_Seed_picked_up")
-		return seed_instance
+		return crop_scenes[seed_name].instance()
+	return null
 		
 func add_coins(num_coins):
 	coin_count += num_coins
 	hud.update_labels()	
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
+func _process(delta):
+	# Called every frame. Delta is time since last frame.
+	# Update game logic here.
+	if Input.is_action_just_released("pick_seed"):
+		equipped_seed_index = (equipped_seed_index + 1) % crop_names.size()
+		hud.update_labels()
+	
 # Connections
-func _on_Seed_picked_up():
-	seed_counts["Potato"] += 1
+func _on_Seed_picked_up(_seed):
+	picked_up_seed = _seed
+	seed_counts[picked_up_seed.type] += 1
 	hud.update_labels()
 

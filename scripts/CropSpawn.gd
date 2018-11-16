@@ -54,8 +54,8 @@ func _on_CropSpawn_input_event(viewport, event, shape_idx):
 func _planting_completed():
 	stop_progress()
 	
-	var crop_seed = GameState.get_seed() 
-	crop = crop_seed.spawn_crop()
+	crop = GameState.plant_active_crop()
+	print(crop)
 	crop.connect("harvestable", self, "_on_crop_harvestable")
 	add_child(crop)
 	$Highlight.hide()

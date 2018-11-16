@@ -4,6 +4,12 @@
 
 [sub_resource type="SpriteFrames" id=1]
 
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
