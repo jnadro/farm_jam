@@ -21,7 +21,6 @@ func _ready():
 	for crop in crop_names:
 		seed_counts[crop] = 0
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
-	print(crop_scenes)
 	
 func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
