@@ -1,12 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/Artichoke.png" type="Texture" id=2]
 [ext_resource path="res://resources/textures/Cucumber.png" type="Texture" id=3]
 [ext_resource path="res://resources/textures/Potato.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/Tomato.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/coin/goldCoin1.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/coin/goldCoin2.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/coin/goldCoin3.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/coin/goldCoin4.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/coin/goldCoin5.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/coin/goldCoin7.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/coin/goldCoin6.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/coin/goldCoin8.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/coin/goldCoin9.png" type="Texture" id=14]
 
-[node name="HUD" type="CanvasLayer"]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "spinning",
+"speed": 8.0
+} ]
+
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -228,5 +246,12 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.192204, 0.5, 0.218655, 0.41502 )
 _sections_unfolded = [ "Rect" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="11"]
+
+position = Vector2( 955.738, 14.9535 )
+frames = SubResource( 1 )
+animation = "spinning"
+playing = true
 
 
