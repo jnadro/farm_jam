@@ -14,9 +14,6 @@ func _ready():
 	sprite_frames.add_animation("Grow")
 	sprite_frames.set_animation_loop("Grow", false)
 	var resource_path = "res://resources/textures/" + crop_type + "/"
-	print(resource_path)
-	print(crop_type)
-	print("\n")
 	sprite_frames.add_frame("Grow", load(resource_path + "Seed.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage1.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage2.png"))

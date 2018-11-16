@@ -55,14 +55,12 @@ func _planting_completed():
 	stop_progress()
 	
 	crop = GameState.plant_active_crop()
-	print(crop)
 	crop.connect("harvestable", self, "_on_crop_harvestable")
 	add_child(crop)
 	$Highlight.hide()
 	state = STATES.GROWING
 	
 func _on_crop_harvestable():
-	print("Harvest ready!")	
 	state = STATES.HARVEST
 
 func _harvest_completed():
