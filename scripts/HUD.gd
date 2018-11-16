@@ -18,4 +18,4 @@ func update_labels():
 	$PotatoSeedLabel.text = str(GameState.seed_counts["Potato"])
 	$TomatoSeedLabel.text = str(GameState.seed_counts["Tomato"])
 	$CoinCountLabel.text = str(GameState.coin_count)
-	$Highlight.rect_position.x = GameState.equipped_seed_index * GameState.TILE_SIZE * 2
+	$Selected.position.x = GameState.equipped_seed_index * GameState.TILE_SIZE * 2
