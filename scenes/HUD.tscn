@@ -1,16 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/SeedPouch.png" type="Texture" id=2]
 [ext_resource path="res://resources/textures/SelectedSeedPouch.png" type="Texture" id=3]
 [ext_resource path="res://resources/textures/Inventory.png" type="Texture" id=4]
-[ext_resource path="res://resources/textures/Artichoke.png" type="Texture" id=5]
-[ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=6]
-[ext_resource path="res://resources/textures/Cucumber.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/Potato.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/Tomato.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/artichoke/Seeds.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/Artichoke.png" type="Texture" id=6]
+[ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=7]
+[ext_resource path="res://resources/textures/cucumber/Seeds.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/Cucumber.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/potato/Seeds.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/Potato.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/tomato/Seeds.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/Tomato.png" type="Texture" id=13]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -21,40 +25,42 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 6.86839, 7.29767 )
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Sprite4" type="Sprite" parent="." index="1"]
 
-position = Vector2( 192, 0 )
+position = Vector2( 198.868, 7.29767 )
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Sprite3" type="Sprite" parent="." index="2"]
 
-position = Vector2( 128, 0 )
+position = Vector2( 134.868, 7.29767 )
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="3"]
 
-position = Vector2( 64, 0 )
+position = Vector2( 70.8684, 7.29767 )
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Selected" type="Sprite" parent="." index="4"]
 
+position = Vector2( 6.86839, 7.29767 )
 texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Inventory" type="Sprite" parent="." index="5"]
 
-position = Vector2( 832, 0 )
+position = Vector2( 822.321, 10.396 )
 scale = Vector2( 2, 1 )
 texture = ExtResource( 4 )
 centered = false
@@ -66,8 +72,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 17.0
+margin_top = 12.0
+margin_right = 57.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.75, 0.75 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -76,6 +85,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="ArtichokeTexture2" type="TextureRect" parent="." index="7"]
 
@@ -83,17 +93,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 837.0
-margin_top = -1.0
-margin_right = 877.0
-margin_bottom = 39.0
+margin_left = 827.0
+margin_top = 9.0
+margin_right = 867.0
+margin_bottom = 49.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 
 [node name="ArtichokeSeedLabel" type="Label" parent="." index="8"]
@@ -102,9 +112,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 32.0
-margin_right = 64.0
-margin_bottom = 32.0
+margin_left = 39.0
+margin_top = 8.0
+margin_right = 71.0
+margin_bottom = 40.0
 rect_rotation = -0.289394
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -112,7 +123,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -128,17 +139,20 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 64.0
-margin_right = 104.0
-margin_bottom = 40.0
+margin_left = 84.0
+margin_top = 12.0
+margin_right = 124.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.75, 0.75 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="CucumberTexture2" type="TextureRect" parent="." index="10"]
 
@@ -146,17 +160,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 879.0
-margin_top = -1.0
-margin_right = 919.0
-margin_bottom = 39.0
+margin_left = 869.0
+margin_top = 9.0
+margin_right = 909.0
+margin_bottom = 49.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
 [node name="CucumberSeedLabel" type="Label" parent="." index="11"]
@@ -165,16 +179,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 96.0
-margin_right = 128.0
-margin_bottom = 32.0
+margin_left = 103.0
+margin_top = 8.0
+margin_right = 135.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -190,17 +205,20 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 128.0
-margin_right = 168.0
-margin_bottom = 40.0
+margin_left = 148.0
+margin_top = 12.0
+margin_right = 188.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.75, 0.75 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="PotatoTexture2" type="TextureRect" parent="." index="13"]
 
@@ -208,16 +226,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 928.0
-margin_right = 968.0
-margin_bottom = 40.0
+margin_left = 918.0
+margin_top = 10.0
+margin_right = 958.0
+margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="PotatoSeedLabel" type="Label" parent="." index="14"]
@@ -226,16 +245,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 160.0
-margin_right = 192.0
-margin_bottom = 32.0
+margin_left = 167.0
+margin_top = 8.0
+margin_right = 199.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -251,17 +271,20 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 192.0
-margin_right = 232.0
-margin_bottom = 40.0
+margin_left = 213.0
+margin_top = 12.0
+margin_right = 253.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.75, 0.75 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="TomatoTexture2" type="TextureRect" parent="." index="16"]
 
@@ -269,17 +292,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 971.0
-margin_top = -3.0
-margin_right = 1011.0
-margin_bottom = 37.0
+margin_left = 961.0
+margin_top = 7.0
+margin_right = 1001.0
+margin_bottom = 47.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 stretch_mode = 0
 
 [node name="TomatoSeedLabel" type="Label" parent="." index="17"]
@@ -288,16 +311,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 224.0
-margin_right = 256.0
-margin_bottom = 32.0
+margin_left = 231.0
+margin_top = 8.0
+margin_right = 263.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -313,17 +337,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 855.0
-margin_top = -3.0
-margin_right = 887.0
-margin_bottom = 29.0
+margin_left = 845.0
+margin_top = 7.0
+margin_right = 877.0
+margin_bottom = 39.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -339,17 +363,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 901.0
-margin_top = -3.0
-margin_right = 933.0
-margin_bottom = 29.0
+margin_left = 891.0
+margin_top = 7.0
+margin_right = 923.0
+margin_bottom = 39.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -365,17 +389,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 951.0
-margin_top = -3.0
-margin_right = 983.0
-margin_bottom = 29.0
+margin_left = 941.0
+margin_top = 7.0
+margin_right = 973.0
+margin_bottom = 39.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -391,17 +415,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 992.0
-margin_top = -3.0
-margin_right = 1024.0
-margin_bottom = 29.0
+margin_left = 982.0
+margin_top = 7.0
+margin_right = 1014.0
+margin_bottom = 39.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
