@@ -14,6 +14,9 @@ func start(duration):
             'value', 0, 100,
             duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
+	
+func stop():
+	$Tween.stop_all()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

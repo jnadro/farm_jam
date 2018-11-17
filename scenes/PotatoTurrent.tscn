@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/PotatoTurrent.gd" type="Script" id=1]
+[ext_resource path="res://resources/textures/CollectionBox.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/Potato.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.491, 31.9974 )
+
+[node name="PotatoTurrent" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( -0.347946, 3.94339 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
+
+[node name="FireCooldown" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="ProgressBar" parent="." index="4" instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( -25.3496, -27.7971 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="AmmoCount" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -4.0
+margin_top = 17.0
+margin_right = 36.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[connection signal="area_entered" from="." to="." method="_on_PotatoTurrent_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_PotatoTurrent_area_exited"]
+
+[connection signal="timeout" from="FireCooldown" to="." method="_on_FireCooldown_timeout"]
+
+

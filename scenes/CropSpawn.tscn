@@ -44,6 +44,8 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="Highlight" type="Polygon2D" parent="." index="2"]
 
 visible = false
+position = Vector2( 1.71711, 1.71711 )
+scale = Vector2( 0.9, 0.9 )
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 uv = PoolVector2Array(  )
 color = Color( 0.307401, 0.617188, 0.220661, 0.498039 )
@@ -56,11 +58,13 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="area_entered" from="." to="." method="_on_CropSpawn_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_CropSpawn_area_exited"]
 
 [connection signal="input_event" from="." to="." method="_on_CropSpawn_input_event"]
-
-[connection signal="mouse_entered" from="." to="." method="_on_CropSpawn_mouse_entered"]
 
 [connection signal="mouse_exited" from="." to="." method="_on_CropSpawn_mouse_exited"]
 
