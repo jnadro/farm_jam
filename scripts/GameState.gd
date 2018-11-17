@@ -45,6 +45,7 @@ func has_crop_in_inventory(crop_type):
 func empty_crop_inventory(crop_type):
 	var crop_count = crop_inventory[crop_type]
 	crop_inventory[crop_type] = 0
+	hud.update_labels()
 	return crop_count
 
 func _process(delta):
