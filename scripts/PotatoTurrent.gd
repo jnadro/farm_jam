@@ -1,10 +1,12 @@
 extends Area2D
 
 # class member variables go here, for example:
-var ammo = 0
+var ammo = 1
 var active = false
 var player_nearby = false
 var ammo_reload_time = 1.0
+
+const bullet_scene = preload( "res://scenes/Bullet.tscn" )
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -45,7 +47,14 @@ func _on_PotatoTurrent_area_exited(area):
 		stop_progress()
 
 func _on_FireCooldown_timeout():
-	pass
+	if ammo > 0:
+		var mob = get_node("/root/Game/Mob") # super hacky
+		if mob != null:
+			var bullet = bullet_scene.instance()
+			var to_mob = mob.get_global_position() - get_global_position()
+			bullet.dir = to_mob.normalized()
+			add_child(bullet)
+			ammo -= 1
 
 
 
