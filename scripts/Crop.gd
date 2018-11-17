@@ -3,7 +3,7 @@ extends Node2D
 signal harvestable
 
 # class member variables go here, for example:
-export(String) var crop_type = "potato"
+export(String) var crop_type = "Potato"
 export(float) var growth_time = 5.0
 export(int) var sell_price = 60
 var harvestable = false

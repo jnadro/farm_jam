@@ -11,15 +11,17 @@ var crop_names = ["Artichoke", "Cucumber", "Potato", "Tomato"]
 var equipped_seed_index = 0
 # dictionary that map crop name string to counts
 var seed_counts = {}
+# dictionary that maps crop names to how many crops you are carrying
+var crop_inventory = {}
 # dictionary that map crop name string to scenes
 var crop_scenes = {}
 var picked_up_seed = null
-var coin_count = 0
 var score = 0
 
 func _ready():
 	for crop in crop_names:
 		seed_counts[crop] = 0
+		crop_inventory[crop] = 0
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
 	
 func has_seeds():
@@ -33,8 +35,8 @@ func plant_active_crop():
 		return crop_scenes[seed_name].instance()
 	return null
 		
-func add_coins(num_coins):
-	coin_count += num_coins
+func add_crop_to_inventory(crop_type, count):
+	crop_inventory[crop_type] += count
 	hud.update_labels()	
 
 func _process(delta):

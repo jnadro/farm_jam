@@ -17,5 +17,10 @@ func update_labels():
 	$CucumberSeedLabel.text = str(GameState.seed_counts["Cucumber"])
 	$PotatoSeedLabel.text = str(GameState.seed_counts["Potato"])
 	$TomatoSeedLabel.text = str(GameState.seed_counts["Tomato"])
-	$CoinCountLabel.text = str(GameState.coin_count)
+	
+	$ArtichokeInvLabel.text = str(GameState.crop_inventory["Artichoke"])
+	$CucumberInvLabel.text = str(GameState.crop_inventory["Cucumber"])
+	$PotatoInvLabel.text = str(GameState.crop_inventory["Potato"])
+	$TomatoInvLabel.text = str(GameState.crop_inventory["Tomato"])
+	
 	$Selected.position.x = GameState.equipped_seed_index * GameState.TILE_SIZE * 2

@@ -64,7 +64,7 @@ func _on_crop_harvestable():
 	state = STATES.HARVEST
 
 func _harvest_completed():
-	GameState.add_coins(crop.sell_price)
+	GameState.add_crop_to_inventory(crop.crop_type, 1)
 	remove_child(crop)
 	stop_progress()
 	state = STATES.PLANT
@@ -78,7 +78,6 @@ func _on_CropSpawn_area_entered(area):
 		if state == STATES.PLANT or state == STATES.HARVEST:
 			$Highlight.show()		
 		player_nearby = true
-
 
 func _on_CropSpawn_area_exited(area):
 	if area.is_in_group("Player"):

@@ -12,9 +12,9 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Tomato" index="0" instance=ExtResource( 1 )]
+[node name="Tomato" instance=ExtResource( 1 )]
 
-crop_type = "tomato"
+crop_type = "Tomato"
 growth_time = 7.0
 sell_price = 100
 

@@ -14,7 +14,7 @@ _sections_unfolded = [ "Resource" ]
 
 [node name="Artichoke" instance=ExtResource( 1 )]
 
-crop_type = "artichoke"
+crop_type = "Artichoke"
 growth_time = 11.0
 sell_price = 120
 
