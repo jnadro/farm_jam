@@ -11,23 +11,28 @@ func _ready():
 	# Initialization here
 	pass
 	
+func _on_reload_completed():
+	ammo += GameState.empty_crop_inventory("Potato")
+	
 func start_progress():
 	$ProgressBar.visible = true
 	$ProgressBar.start(ammo_reload_time)
-	# progress_bar.connect("progress_completed", self, callback)
+	$ProgressBar.connect("progress_completed", self, "_on_reload_completed")
 	
 func stop_progress():
 	$ProgressBar.visible = false
-	$ProgressBar.stop()	
-
+	$ProgressBar.stop()
+	
 func _process(delta):
 	if player_nearby:
-		if !active && Input.is_action_pressed("interact"):
+		if !active && Input.is_action_pressed("interact") && GameState.has_crop_in_inventory("Potato"):
 			start_progress()
 			active = true
 		elif active && Input.is_action_just_released("interact"):
 			stop_progress()
 			active = false
+			
+	$AmmoCount.text = str(ammo)
 
 func _on_PotatoTurrent_area_entered(area):
 	if area.is_in_group("Player"):

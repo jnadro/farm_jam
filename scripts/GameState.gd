@@ -37,7 +37,15 @@ func plant_active_crop():
 		
 func add_crop_to_inventory(crop_type, count):
 	crop_inventory[crop_type] += count
-	hud.update_labels()	
+	hud.update_labels()
+	
+func has_crop_in_inventory(crop_type):
+	return crop_inventory[crop_type] > 0
+	
+func empty_crop_inventory(crop_type):
+	var crop_count = crop_inventory[crop_type]
+	crop_inventory[crop_type] = 0
+	return crop_count
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
