@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node"]
 
@@ -355,5 +356,9 @@ position = Vector2( 352, 448 )
 type = "Cucumber"
 
 [node name="HUD" parent="." index="15" instance=ExtResource( 8 )]
+
+[node name="PotatoTurrent" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 343.671, 302.359 )
 
 

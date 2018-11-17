@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/PotatoTurrent.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/CollectionBox.png" type="Texture" id=2]
 [ext_resource path="res://resources/textures/Potato.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.491, 31.9974 )
 
-[node name="PotatoTurrent" type="Area2D" index="0"]
+[node name="PotatoTurrent" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -35,6 +36,23 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 1 )
 
+[node name="FireCooldown" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="ProgressBar" parent="." index="4" instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( -25.3496, -27.7971 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
 [connection signal="area_entered" from="." to="." method="_on_PotatoTurrent_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_PotatoTurrent_area_exited"]
+
+[connection signal="timeout" from="FireCooldown" to="." method="_on_FireCooldown_timeout"]
 
 
