@@ -22,7 +22,7 @@
 [ext_resource path="res://resources/textures/pig/Down/tile010.png" type="Texture" id=20]
 [ext_resource path="res://resources/textures/pig/Down/tile011.png" type="Texture" id=21]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -46,7 +46,7 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
@@ -70,7 +70,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.6585, 24.4188 )
@@ -81,22 +81,22 @@ extents = Vector2( 11.6585, 24.4188 )
 
 position = Vector2( 0.114449, -3.39296 )
 scale = Vector2( 0.931239, 0.885993 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "Down"
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedSprite" parent="." index="2"]
 
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "Down"
-frame = 3
+frame = 1
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( 0.291977, 1.45994 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
-[node name="BloodParticles" parent="." index="4"]
+[node name="BloodParticles" parent="." index="5"]
 
 position = Vector2( -2.48018, -0.511547 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/player/W.png" type="Texture" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://resources/textures/player/N.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/player/S.png" type="Texture" id=5]
 [ext_resource path="res://resources/textures/player/NE.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/player/NW.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/player/SE.png" type="Texture" id=7]
 [ext_resource path="res://resources/textures/player/SW.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/player/SE.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/player/NW.png" type="Texture" id=9]
+[ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -40,7 +41,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "UpLeft",
+"name": "DownRight",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -50,7 +51,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "DownRight",
+"name": "UpLeft",
 "speed": 5.0
 } ]
 
@@ -69,7 +70,7 @@ extents = Vector2( 7.50065, 17.1976 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -86,7 +87,7 @@ speed = 400
 
 frames = SubResource( 1 )
 animation = "Right"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -279,6 +280,8 @@ process_mode = 1
 wait_time = 0.25
 one_shot = true
 autostart = false
+
+[node name="BloodParticles" parent="." index="11" instance=ExtResource( 10 )]
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 

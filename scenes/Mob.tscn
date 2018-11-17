@@ -1,43 +1,44 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=2]
-[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=3]
-[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=4]
-[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=9]
-[ext_resource path="res://resources/textures/chicken/up/Image10000.png" type="Texture" id=10]
-[ext_resource path="res://resources/textures/chicken/up/Image10001.png" type="Texture" id=11]
-[ext_resource path="res://resources/textures/chicken/up/Image10002.png" type="Texture" id=12]
-[ext_resource path="res://resources/textures/chicken/up/Image10003.png" type="Texture" id=13]
-[ext_resource path="res://resources/textures/chicken/down/Image11.png" type="Texture" id=14]
-[ext_resource path="res://resources/textures/chicken/down/Image21.png" type="Texture" id=15]
-[ext_resource path="res://resources/textures/chicken/down/Image31.png" type="Texture" id=16]
-[ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=17]
-[ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=18]
+[ext_resource path="res://resources/samples/hurt.wav" type="AudioStream" id=2]
+[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/chicken/up/Image10000.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/chicken/up/Image10001.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/chicken/up/Image10002.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/chicken/up/Image10003.png" type="Texture" id=14]
+[ext_resource path="res://resources/textures/chicken/down/Image11.png" type="Texture" id=15]
+[ext_resource path="res://resources/textures/chicken/down/Image21.png" type="Texture" id=16]
+[ext_resource path="res://resources/textures/chicken/down/Image31.png" type="Texture" id=17]
+[ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=18]
+[ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Down",
 "speed": 5.0
@@ -61,24 +62,36 @@ min_speed = 200
 max_speed = 400
 health = null
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="HurtSample" type="AudioStreamPlayer2D" parent="." index="0"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 65536.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 0.209351, 0 )
 frames = SubResource( 1 )
 animation = "Right"
+frame = 2
 playing = true
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0, 0.291988 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material" ]
 
-[node name="Visibility" type="VisibilityEnabler2D" parent="." index="2"]
+[node name="Visibility" type="VisibilityEnabler2D" parent="." index="3"]
 
 rect = Rect2( -10, -10, 20, 20 )
 pause_animations = true
@@ -91,6 +104,24 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="BloodParticles" parent="." index="3" instance=ExtResource( 18 )]
+[node name="BloodParticles" parent="." index="4" instance=ExtResource( 19 )]
+
+[node name="AttackTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="DisplayDamageTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[connection signal="timeout" from="DisplayDamageTimer" to="." method="_on_DisplayDamageTimer_timeout"]
 
 
