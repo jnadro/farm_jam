@@ -8,6 +8,24 @@ var ammo_reload_time = 1.0
 
 const bullet_scene = preload( "res://scenes/Bullet.tscn" )
 
+func play_load_ammo_animation():
+	$BounceX.interpolate_property($Sprite,
+            'scale:y', 1, 1.25,
+            1.0, Tween.TRANS_BOUNCE, Tween.EASE_IN)
+	$BounceX.start()
+	
+	$BounceY.interpolate_property($Sprite,
+            'scale:x', 1, 1.125,
+            1.0, Tween.TRANS_BOUNCE, Tween.EASE_IN)
+	$BounceY.start()
+	
+func stop_load_ammo_animation():
+	$BounceX.stop_all()
+	$BounceY.stop_all()
+	# snap back to original scale
+	$Sprite.scale.x = 1.0
+	$Sprite.scale.y = 1.0
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -15,15 +33,18 @@ func _ready():
 	
 func _on_reload_completed():
 	ammo += GameState.empty_crop_inventory("Potato")
+	stop_progress()
 	
 func start_progress():
 	$ProgressBar.visible = true
-	$ProgressBar.start(ammo_reload_time)
+	$ProgressBar.start(ammo_reload_time * GameState.get_crop_count_in_inventory("Potato"))
 	$ProgressBar.connect("progress_completed", self, "_on_reload_completed")
+	play_load_ammo_animation()
 	
 func stop_progress():
 	$ProgressBar.visible = false
 	$ProgressBar.stop()
+	stop_load_ammo_animation()
 	
 func _process(delta):
 	if player_nearby:
