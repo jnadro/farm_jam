@@ -62,6 +62,7 @@ func _process(delta):
 # Connections
 func _on_Seed_picked_up(_seed):
 	picked_up_seed = _seed
+	print(picked_up_seed)
 	seed_counts[picked_up_seed.type] += 1
 	hud.update_labels()
 
