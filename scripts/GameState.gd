@@ -23,6 +23,7 @@ func _ready():
 		seed_counts[crop] = 0
 		crop_inventory[crop] = 0
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
+	crop_inventory["Potato"] += 20
 	
 func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
@@ -41,6 +42,9 @@ func add_crop_to_inventory(crop_type, count):
 	
 func has_crop_in_inventory(crop_type):
 	return crop_inventory[crop_type] > 0
+
+func get_crop_count_in_inventory(crop_type):
+	return crop_inventory[crop_type]
 	
 func empty_crop_inventory(crop_type):
 	var crop_count = crop_inventory[crop_type]
