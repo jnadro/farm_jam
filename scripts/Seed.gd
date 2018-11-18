@@ -3,7 +3,7 @@ extends Area2D
 signal picked_up(_seed)
 
 # class member variables go here, for example:
-export (String) var type = "potato"
+export (String) var type = "Potato"
 var crop_scene = null
 var taken = false
 

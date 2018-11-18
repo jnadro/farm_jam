@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node" index="0"]
 
@@ -55,7 +54,7 @@ position = Vector2( 416, 352 )
 
 [node name="FarmPlot6" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 416, 96 )
+position = Vector2( 412.225, 92.4977 )
 
 [node name="CollectionBox" parent="." index="7" instance=ExtResource( 3 )]
 
@@ -329,11 +328,11 @@ _sections_unfolded = [ "Transform" ]
 "player",
 ] instance=ExtResource( 5 )]
 
-position = Vector2( 590.542, 311.845 )
+position = Vector2( 411.976, 384.686 )
 
-[node name="Mob" parent="." index="10" instance=ExtResource( 6 )]
+[node name="Chicken" parent="." index="10" instance=ExtResource( 6 )]
 
-position = Vector2( 396.559, 310.618 )
+position = Vector2( 431.937, 317.985 )
 
 [node name="Tomato" parent="." index="11" instance=ExtResource( 7 )]
 
@@ -343,7 +342,6 @@ type = "Tomato"
 [node name="Potato" parent="." index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 704, 448 )
-type = "Potato"
 
 [node name="Artichoke" parent="." index="13" instance=ExtResource( 7 )]
 
@@ -357,8 +355,10 @@ type = "Cucumber"
 
 [node name="HUD" parent="." index="15" instance=ExtResource( 8 )]
 
-[node name="PotatoTurrent" parent="." index="16" instance=ExtResource( 9 )]
+[node name="Cow" parent="." index="16" instance=ExtResource( 7 )]
 
-position = Vector2( 343.671, 302.359 )
+position = Vector2( 666.187, 298.815 )
+
+[node name="Bluejay" parent="." index="17" instance=ExtResource( 8 )]
 
 
