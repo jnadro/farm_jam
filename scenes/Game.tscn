@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/MobSpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=10]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Level" type="TileMap" parent="." index="0"]
 
@@ -458,5 +460,10 @@ type = "Cucumber"
 [node name="Cow" parent="." index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 666.187, 298.815 )
+
+[node name="MobSpawner" parent="." index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 32, 288 )
+Mob = ExtResource( 10 )
 
 
