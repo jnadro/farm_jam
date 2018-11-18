@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/artichoke.png-193ee16af984b223de2b874ca77d9339.stex"
+path="res://.import/artichoke.png-8d6d3f3fbefc7f766bdd094f807707a5.stex"
 
 [deps]
 
-source_file="res://resources/textures/artichoke/artichoke.png"
-dest_files=[ "res://.import/artichoke.png-193ee16af984b223de2b874ca77d9339.stex" ]
+source_file="res://resources/textures/Artichoke/artichoke.png"
+dest_files=[ "res://.import/artichoke.png-8d6d3f3fbefc7f766bdd094f807707a5.stex" ]
 
 [params]
 

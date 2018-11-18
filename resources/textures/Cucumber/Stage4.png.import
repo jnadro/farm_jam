@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stage4.png-4070771048bd7017cdee1ab42bf20e7d.stex"
+path="res://.import/Stage4.png-83facd7f3ba2a397cc5000a671504602.stex"
 
 [deps]
 
-source_file="res://resources/textures/cucumber/Stage4.png"
-dest_files=[ "res://.import/Stage4.png-4070771048bd7017cdee1ab42bf20e7d.stex" ]
+source_file="res://resources/textures/Cucumber/Stage4.png"
+dest_files=[ "res://.import/Stage4.png-83facd7f3ba2a397cc5000a671504602.stex" ]
 
 [params]
 

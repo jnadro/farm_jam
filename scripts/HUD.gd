@@ -24,3 +24,5 @@ func update_labels():
 	$TomatoInvLabel.text = str(GameState.crop_inventory["Tomato"])
 	
 	$Selected.position.x = GameState.equipped_seed_index * GameState.TILE_SIZE * 2
+	
+	$PlayerStats/HealthBar.value = GameState.player.health

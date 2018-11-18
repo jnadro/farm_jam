@@ -18,6 +18,8 @@ var crop_scenes = {}
 var picked_up_seed = null
 var score = 0
 
+onready var player = get_node("/root/Game/Player")
+
 func _ready():
 	for crop in crop_names:
 		seed_counts[crop] = 0
@@ -64,5 +66,8 @@ func _on_Seed_picked_up(_seed):
 	picked_up_seed = _seed
 	print(picked_up_seed)
 	seed_counts[picked_up_seed.type] += 1
+	hud.update_labels()
+	
+func _on_Player_player_took_damage():
 	hud.update_labels()
 

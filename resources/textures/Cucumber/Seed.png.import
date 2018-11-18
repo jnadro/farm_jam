@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Seed.png-fee35067a9ff96ae3c7a7565c34126df.stex"
+path="res://.import/Seed.png-d71e4b6adccb0ff522a6d169c5ad16f9.stex"
 
 [deps]
 
-source_file="res://resources/textures/cucumber/Seed.png"
-dest_files=[ "res://.import/Seed.png-fee35067a9ff96ae3c7a7565c34126df.stex" ]
+source_file="res://resources/textures/Cucumber/Seed.png"
+dest_files=[ "res://.import/Seed.png-d71e4b6adccb0ff522a6d169c5ad16f9.stex" ]
 
 [params]
 

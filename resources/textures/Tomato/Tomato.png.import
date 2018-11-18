@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tomato.png-94cb0e941a80e8576711035b8b169e23.stex"
+path="res://.import/Tomato.png-ed8b1695941ffde857133ab209a1108c.stex"
 
 [deps]
 
-source_file="res://resources/textures/tomato/Tomato.png"
-dest_files=[ "res://.import/Tomato.png-94cb0e941a80e8576711035b8b169e23.stex" ]
+source_file="res://resources/textures/Tomato/Tomato.png"
+dest_files=[ "res://.import/Tomato.png-ed8b1695941ffde857133ab209a1108c.stex" ]
 
 [params]
 
