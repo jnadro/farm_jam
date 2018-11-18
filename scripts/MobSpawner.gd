@@ -17,4 +17,9 @@ func _on_MobTimer_timeout():
 	# spawn a mob
 	var mob = Mob.instance()
 	mob.position = Vector2(100, 100)
+	mob.connect("die", self, "_on_mob_die")
 	add_child(mob)
+
+func _on_mob_die():
+	GameState.add_score(10)
+	

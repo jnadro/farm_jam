@@ -27,6 +27,9 @@ func _ready():
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
 	crop_inventory["Potato"] += 20
 	
+func add_score(val):
+	score += val
+	
 func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
 		
