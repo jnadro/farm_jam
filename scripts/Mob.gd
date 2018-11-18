@@ -76,8 +76,9 @@ func get_facing_direction(velocity):
 	return $AnimatedSprite.animation;
 	
 func update_shadow_sprite (direction):
-	if $ShadowSprite:
-		$ShadowSprite.animation = direction
+	#if $ShadowSprite:
+	#	$ShadowSprite.animation = direction
+	pass
 
 func minimum_distance_to_player():
 	if position.distance_to(player.position) <= 32:
