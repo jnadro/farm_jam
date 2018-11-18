@@ -7,7 +7,6 @@ var screensize
 var can_attack = true
 var damage = 10
 var hitbox_lookup
-var health = 50
 
 # Called once
 func _ready():
@@ -84,23 +83,6 @@ func get_facing_direction(velocity):
 	elif velocity.y > 0 and velocity.x < 0:
 		return "DownLeft"
 	return $AnimatedSprite.animation;
-
-func damage(dmg):
-	health -= dmg
-	if health <= 0:
-		die()
-	else:
-		if $BloodParticles.emitting == false:
-			$BloodParticles.emitting = true
-		pass
-		
-func die():
-	# Emit particles of blood
-	# Hide
-	print("dead")
-	#hide()
-	# Disable collision detection
-	#$CollisionShape2D.disabled = true
 
 func _on_Player_body_entered(body):
 	#print("HIT")
