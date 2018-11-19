@@ -76,6 +76,7 @@ func _on_FireCooldown_timeout():
 			bullet.dir = to_mob.normalized()
 			add_child(bullet)
 			ammo -= 1
+			$FireSound.play()
 
 
 
