@@ -38,7 +38,8 @@ func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
 	
 func spawn_random_seed(position):
-	if randf() <= seed_drop_chance:
+	var r = 1 - randf()
+	if r <= seed_drop_chance:
 		var new_seed = seed_scene.instance()
 		new_seed.position = position
 		var rand_crop_idx = randi() % crop_names.size()
