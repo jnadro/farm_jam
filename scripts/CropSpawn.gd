@@ -2,7 +2,6 @@ extends Area2D
 
 # class member variables go here, for example:
 enum STATES { PLANT, GROWING, HARVEST }
-onready var collection_box = get_node("/root/Game/CollectionBox")
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
 var state = STATES.PLANT

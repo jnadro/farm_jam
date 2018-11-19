@@ -40,11 +40,13 @@ func start_progress():
 	$ProgressBar.start(ammo_reload_time * GameState.get_crop_count_in_inventory("Potato"))
 	$ProgressBar.connect("progress_completed", self, "_on_reload_completed")
 	play_load_ammo_animation()
+	$ReloadSound.play()
 	
 func stop_progress():
 	$ProgressBar.visible = false
 	$ProgressBar.stop()
 	stop_load_ammo_animation()
+	$ReloadSound.stop()
 	
 func _process(delta):
 	if player_nearby:
@@ -69,7 +71,7 @@ func _on_PotatoTurrent_area_exited(area):
 
 func _on_FireCooldown_timeout():
 	if ammo > 0:
-		var mob = get_node("/root/Game/Mob") # super hacky
+		var mob = get_node("/root/Game/Chicken") # super hacky
 		if mob != null:
 			var bullet = bullet_scene.instance()
 			var to_mob = mob.get_global_position() - get_global_position()

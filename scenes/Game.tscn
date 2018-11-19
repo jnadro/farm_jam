@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/FarmPlot.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/MobSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node" index="0"]
 
@@ -454,7 +455,7 @@ type = "Cucumber"
 
 [node name="Cow" parent="." index="15" instance=ExtResource( 6 )]
 
-position = Vector2( 666.187, 298.815 )
+position = Vector2( 664.99, 297.019 )
 
 [node name="MobSpawner" parent="." index="16" instance=ExtResource( 8 )]
 
@@ -463,5 +464,13 @@ Mob = ExtResource( 9 )
 SpawnRate = 2.0
 
 [node name="Seeds" type="Node" parent="." index="17"]
+
+[node name="PotatoTurrent" parent="." index="18" instance=ExtResource( 10 )]
+
+position = Vector2( 336.166, 303.834 )
+
+[node name="PotatoTurrent2" parent="." index="19" instance=ExtResource( 10 )]
+
+position = Vector2( 674.449, 302.637 )
 
 

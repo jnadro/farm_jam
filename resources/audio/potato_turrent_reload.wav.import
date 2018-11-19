@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/potato_turrent_reload.wav-e56d6d469e6220067b5fc66526470e8f.sample"
+
+[deps]
+
+source_file="res://resources/audio/potato_turrent_reload.wav"
+dest_files=[ "res://.import/potato_turrent_reload.wav-e56d6d469e6220067b5fc66526470e8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

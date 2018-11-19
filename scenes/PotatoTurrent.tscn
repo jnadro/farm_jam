@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/PotatoTurrent.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/CollectionBox.png" type="Texture" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://scenes/ProgressBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=5]
 [ext_resource path="res://resources/audio/potato_turrent_fire.wav" type="AudioStream" id=6]
+[ext_resource path="res://resources/audio/potato_turrent_reload.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.491, 31.9974 )
 
-[node name="PotatoTurrent" type="Area2D" index="0"]
+[node name="PotatoTurrent" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -82,7 +83,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 repeat = true
 playback_process_mode = 1
 playback_speed = 1.0
-playback/active = true
+playback/active = false
 playback/repeat = true
 playback/speed = 1.0
 _sections_unfolded = [ "playback" ]
@@ -92,7 +93,7 @@ _sections_unfolded = [ "playback" ]
 repeat = true
 playback_process_mode = 1
 playback_speed = 1.0
-playback/active = true
+playback/active = false
 playback/repeat = true
 playback/speed = 1.0
 _sections_unfolded = [ "playback" ]
@@ -100,6 +101,15 @@ _sections_unfolded = [ "playback" ]
 [node name="FireSound" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
