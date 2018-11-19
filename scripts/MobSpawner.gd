@@ -21,6 +21,6 @@ func _on_MobTimer_timeout():
 
 func _on_mob_die(mob):
 	GameState.add_score(10)
-	GameState.spawn_random_seed(mob.position)
+	GameState.spawn_random_seed(mob.global_position)
 	remove_child(mob)
 	
