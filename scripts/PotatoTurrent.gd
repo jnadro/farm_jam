@@ -2,7 +2,8 @@ extends Area2D
 
 # class member variables go here, for example:
 var ammo = 1
-var active = false
+var reloading = false
+var active_target = null
 var player_nearby = false
 var ammo_reload_time = 1.0
 
@@ -50,12 +51,12 @@ func stop_progress():
 	
 func _process(delta):
 	if player_nearby:
-		if !active && Input.is_action_pressed("interact") && GameState.has_crop_in_inventory("Potato"):
+		if !reloading && Input.is_action_pressed("interact") && GameState.has_crop_in_inventory("Potato"):
 			start_progress()
-			active = true
-		elif active && Input.is_action_just_released("interact"):
+			reloading = true
+		elif reloading && Input.is_action_just_released("interact"):
 			stop_progress()
-			active = false
+			reloading = false
 			
 	$AmmoCount.text = str(ammo)
 
@@ -66,19 +67,26 @@ func _on_PotatoTurrent_area_entered(area):
 func _on_PotatoTurrent_area_exited(area):
 	if area.is_in_group("Player"):
 		player_nearby = false
-		active = false
+		reloading = false
 		stop_progress()
 
 func _on_FireCooldown_timeout():
-	if ammo > 0:
-		var mob = get_node("/root/Game/Chicken") # super hacky
-		if mob != null:
+	if ammo > 0 and !reloading:
+		if active_target != null:
 			var bullet = bullet_scene.instance()
-			var to_mob = mob.get_global_position() - get_global_position()
+			var to_mob = active_target.get_global_position() - get_global_position()
 			bullet.dir = to_mob.normalized()
 			add_child(bullet)
 			ammo -= 1
 			$FireSound.play()
+			active_target = null
 
+func _on_Range_body_entered(body):
+	if body.is_in_group("mobs"):
+		active_target = body
+		print(active_target)
 
-
+func _on_Range_body_exited(body):
+	# lose the target if it leaves our area
+	if active_target == body:
+		active_target = null

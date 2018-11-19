@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/PotatoTurrent.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/CollectionBox.png" type="Texture" id=2]
@@ -13,7 +13,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.491, 31.9974 )
 
-[node name="PotatoTurrent" type="Area2D"]
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 320.0
+
+[node name="PotatoTurrent" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -38,13 +43,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-visible = false
 shape = SubResource( 1 )
 
 [node name="FireCooldown" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 1.0
 one_shot = false
 autostart = true
 
@@ -116,10 +120,28 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="Range" type="Area2D" parent="." index="10"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Collision" type="CollisionShape2D" parent="Range" index="0"]
+
+shape = SubResource( 2 )
+
 [connection signal="area_entered" from="." to="." method="_on_PotatoTurrent_area_entered"]
 
 [connection signal="area_exited" from="." to="." method="_on_PotatoTurrent_area_exited"]
 
 [connection signal="timeout" from="FireCooldown" to="." method="_on_FireCooldown_timeout"]
+
+[connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
+
+[connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
 
 
