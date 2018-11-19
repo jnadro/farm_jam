@@ -10,8 +10,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	var mob = get_node("/root/Game/Mob")
-
+	pass
 
 func _on_Timer_timeout():
 	queue_free()
