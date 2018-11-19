@@ -1,11 +1,10 @@
 extends Node2D
 
 export (PackedScene) var Mob
+export (float) var SpawnRate
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$MobTimer.wait_time = SpawnRate
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
