@@ -20,6 +20,8 @@ func _on_MobTimer_timeout():
 	mob.connect("die", self, "_on_mob_die")
 	add_child(mob)
 
-func _on_mob_die():
+func _on_mob_die(mob):
 	GameState.add_score(10)
+	remove_child(mob)
+	GameState.spawn_random_seed(mob.position)
 	

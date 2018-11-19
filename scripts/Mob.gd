@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-signal die
+signal die(mob)
 
 export (int) var min_speed # Minimum speed range.
 export (int) var max_speed # Maximum speed range.
@@ -142,7 +142,7 @@ func die():
 	# Disable collision detection
 	$CollisionShape2D.disabled = true
 	# Let others know a mob died
-	emit_signal("die")
+	emit_signal("die", self)
 	
 func _on_AttackTimer_timeout():
 	if position.distance_to(player.position) <= 32:

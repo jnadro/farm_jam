@@ -466,4 +466,6 @@ position = Vector2( 666.187, 298.815 )
 position = Vector2( 32, 288 )
 Mob = ExtResource( 10 )
 
+[node name="Seeds" type="Node" parent="." index="18"]
+
 

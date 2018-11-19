@@ -5,6 +5,7 @@ const TILE_SIZE = 32
 
 # class member variables go here, for example:
 onready var hud = get_node("/root/Game/HUD")
+onready var game = get_node("/root/Game")
 
 var crop_names = ["Artichoke", "Cucumber", "Potato", "Tomato"]
 
@@ -15,6 +16,7 @@ var seed_counts = {}
 var crop_inventory = {}
 # dictionary that map crop name string to scenes
 var crop_scenes = {}
+var seed_scene = load("res://scenes/Seed.tscn")
 var picked_up_seed = null
 var score = 0
 
@@ -24,7 +26,7 @@ func _ready():
 	for crop in crop_names:
 		seed_counts[crop] = 0
 		crop_inventory[crop] = 0
-		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
+		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")	
 	crop_inventory["Potato"] += 20
 	
 func add_score(val):
@@ -32,6 +34,12 @@ func add_score(val):
 	
 func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
+	
+func spawn_random_seed(position):
+	var new_seed = seed_scene.instance()
+	new_seed.position = position
+	new_seed.type = "Tomato"
+	game.get_node("Seeds").add_child(new_seed)
 		
 func plant_active_crop():
 	if has_seeds():
