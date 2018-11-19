@@ -35,6 +35,7 @@ func _process(delta):
 	if Input.is_action_pressed("drop_bomb") and GameState.has_bomb() and can_player_taunt():
 		can_taunt = false
 		$TauntTimer.start()
+		$DropTauntBomb.play()
 		GameState.drop_taunt_bomb()
 		
 	# Do not let the player move while attacking

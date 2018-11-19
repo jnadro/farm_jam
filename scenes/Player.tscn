@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/chicken/shadow/tile001.png" type="Texture" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://resources/textures/player/down_attack_spear/tile084.png" type="Texture" id=78]
 [ext_resource path="res://resources/textures/player/down_attack_spear/tile085.png" type="Texture" id=79]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=80]
+[ext_resource path="res://resources/audio/drop_taunt_bomb.wav" type="AudioStream" id=81]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -425,6 +426,15 @@ __meta__ = {
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
 shape = SubResource( 5 )
+
+[node name="DropTauntBomb" type="AudioStreamPlayer" parent="." index="14"]
+
+stream = ExtResource( 81 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
