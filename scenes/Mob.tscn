@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
 [ext_resource path="res://resources/samples/hurt.wav" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://resources/textures/chicken/down/Image31.png" type="Texture" id=17]
 [ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=18]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=19]
+[ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -50,7 +51,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 16.4217, 14.7831 )
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -78,7 +79,7 @@ area_mask = 1
 position = Vector2( 0.209351, 0 )
 frames = SubResource( 1 )
 animation = "Right"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
@@ -119,6 +120,34 @@ process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
+
+[node name="TauntIndicator" type="Label" parent="." index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -23.0
+margin_top = -36.0
+margin_right = 17.0
+margin_bottom = -21.0
+rect_scale = Vector2( 1.25, 1.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.691406, 0.130103, 0.130103, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "!?"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect", "Visibility", "custom_colors", "custom_fonts" ]
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 

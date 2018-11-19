@@ -156,9 +156,11 @@ func _on_AttackTimer_timeout():
 
 func taunt(in_target):
 	state = STATES.TAUNTED
-	target = in_target 
+	target = in_target
+	$TauntIndicator.visible = true
 		
 func _on_taunt_timeout():
 	state = STATES.HUNT
 	target = null
+	$TauntIndicator.visible = false	
 
