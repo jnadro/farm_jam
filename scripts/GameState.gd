@@ -20,6 +20,8 @@ var seed_scene = load("res://scenes/Seed.tscn")
 var picked_up_seed = null
 var score = 0
 
+const seed_drop_chance = 0.25
+
 onready var player = get_node("/root/Game/Player")
 
 func _ready():
@@ -36,10 +38,12 @@ func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
 	
 func spawn_random_seed(position):
-	var new_seed = seed_scene.instance()
-	new_seed.position = position
-	new_seed.type = "Tomato"
-	game.get_node("Seeds").add_child(new_seed)
+	if randf() <= seed_drop_chance:
+		var new_seed = seed_scene.instance()
+		new_seed.position = position
+		var rand_crop_idx = randi() % crop_names.size()
+		new_seed.type = crop_names[rand_crop_idx]
+		game.get_node("Seeds").add_child(new_seed)
 		
 func plant_active_crop():
 	if has_seeds():
