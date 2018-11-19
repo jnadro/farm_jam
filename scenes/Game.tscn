@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/MobSpawner.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=10]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Level" type="TileMap" parent="." index="0"]
 
@@ -463,9 +463,9 @@ position = Vector2( 666.187, 298.815 )
 
 [node name="MobSpawner" parent="." index="17" instance=ExtResource( 9 )]
 
-position = Vector2( 32, 288 )
+position = Vector2( 32, 64 )
 Mob = ExtResource( 10 )
-SpawnRate = 1.0
+SpawnRate = 2.0
 
 [node name="Seeds" type="Node" parent="." index="18"]
 

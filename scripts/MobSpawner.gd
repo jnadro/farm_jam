@@ -14,7 +14,9 @@ func _ready():
 #	pass
 
 func get_random_position():
-	return global_position
+	# Choose a random location on Path2D.
+	$MobPath/MobSpawnLocation.set_offset(randi())
+	return $MobPath/MobSpawnLocation.position
 
 func _on_MobTimer_timeout():
 	# spawn a mob
