@@ -158,6 +158,7 @@ func taunt(in_target):
 	state = STATES.TAUNTED
 	target = in_target
 	$TauntIndicator.visible = true
+	$TauntSound.play()
 		
 func _on_taunt_timeout():
 	state = STATES.HUNT

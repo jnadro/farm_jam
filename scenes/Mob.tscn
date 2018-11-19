@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
 [ext_resource path="res://resources/samples/hurt.wav" type="AudioStream" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=18]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=19]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=20]
+[ext_resource path="res://resources/audio/taunt.wav" type="AudioStream" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -148,6 +149,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="TauntSound" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 
