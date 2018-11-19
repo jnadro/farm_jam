@@ -1,97 +1,97 @@
 [gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/chicken/shadow/tile003.png" type="Texture" id=2]
-[ext_resource path="res://resources/textures/chicken/shadow/tile001.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/chicken/shadow/tile001.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/chicken/shadow/tile003.png" type="Texture" id=3]
 [ext_resource path="res://resources/textures/chicken/shadow/tile000.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/chicken/shadow/tile002.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile143.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile144.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile145.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile146.png" type="Texture" id=9]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile147.png" type="Texture" id=10]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile148.png" type="Texture" id=11]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile149.png" type="Texture" id=12]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile150.png" type="Texture" id=13]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile151.png" type="Texture" id=14]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile117.png" type="Texture" id=15]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile118.png" type="Texture" id=16]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile119.png" type="Texture" id=17]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile120.png" type="Texture" id=18]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile121.png" type="Texture" id=19]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile122.png" type="Texture" id=20]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile123.png" type="Texture" id=21]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile124.png" type="Texture" id=22]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile125.png" type="Texture" id=23]
-[ext_resource path="res://resources/textures/player/death/tile260.png" type="Texture" id=24]
-[ext_resource path="res://resources/textures/player/death/tile261.png" type="Texture" id=25]
-[ext_resource path="res://resources/textures/player/death/tile262.png" type="Texture" id=26]
-[ext_resource path="res://resources/textures/player/death/tile263.png" type="Texture" id=27]
-[ext_resource path="res://resources/textures/player/death/tile264.png" type="Texture" id=28]
-[ext_resource path="res://resources/textures/player/death/tile265.png" type="Texture" id=29]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile104.png" type="Texture" id=30]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile105.png" type="Texture" id=31]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile106.png" type="Texture" id=32]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile107.png" type="Texture" id=33]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile108.png" type="Texture" id=34]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile109.png" type="Texture" id=35]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile110.png" type="Texture" id=36]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile111.png" type="Texture" id=37]
-[ext_resource path="res://resources/textures/player/up_walk_spear/tile112.png" type="Texture" id=38]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile078.png" type="Texture" id=39]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile079.png" type="Texture" id=40]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile080.png" type="Texture" id=41]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile081.png" type="Texture" id=42]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile082.png" type="Texture" id=43]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile083.png" type="Texture" id=44]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile084.png" type="Texture" id=45]
-[ext_resource path="res://resources/textures/player/down_attack_spear/tile085.png" type="Texture" id=46]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile091.png" type="Texture" id=47]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile092.png" type="Texture" id=48]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile093.png" type="Texture" id=49]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile094.png" type="Texture" id=50]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile095.png" type="Texture" id=51]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile096.png" type="Texture" id=52]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile097.png" type="Texture" id=53]
-[ext_resource path="res://resources/textures/player/right_attack_spear/tile098.png" type="Texture" id=54]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile052.png" type="Texture" id=55]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile053.png" type="Texture" id=56]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile054.png" type="Texture" id=57]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile055.png" type="Texture" id=58]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile056.png" type="Texture" id=59]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile057.png" type="Texture" id=60]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile058.png" type="Texture" id=61]
-[ext_resource path="res://resources/textures/player/up_attack_spear/tile059.png" type="Texture" id=62]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile130.png" type="Texture" id=63]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile131.png" type="Texture" id=64]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile132.png" type="Texture" id=65]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile133.png" type="Texture" id=66]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile134.png" type="Texture" id=67]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile135.png" type="Texture" id=68]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile136.png" type="Texture" id=69]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile137.png" type="Texture" id=70]
-[ext_resource path="res://resources/textures/player/down_walk_spear/tile138.png" type="Texture" id=71]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile065.png" type="Texture" id=72]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile066.png" type="Texture" id=73]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile067.png" type="Texture" id=74]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile068.png" type="Texture" id=75]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile069.png" type="Texture" id=76]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile070.png" type="Texture" id=77]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile071.png" type="Texture" id=78]
-[ext_resource path="res://resources/textures/player/left_attack_spear/tile072.png" type="Texture" id=79]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile117.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile118.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile119.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile120.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile121.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile122.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile123.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile124.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile125.png" type="Texture" id=14]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile143.png" type="Texture" id=15]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile144.png" type="Texture" id=16]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile145.png" type="Texture" id=17]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile146.png" type="Texture" id=18]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile147.png" type="Texture" id=19]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile148.png" type="Texture" id=20]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile149.png" type="Texture" id=21]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile150.png" type="Texture" id=22]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile151.png" type="Texture" id=23]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile065.png" type="Texture" id=24]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile066.png" type="Texture" id=25]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile067.png" type="Texture" id=26]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile068.png" type="Texture" id=27]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile069.png" type="Texture" id=28]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile070.png" type="Texture" id=29]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile071.png" type="Texture" id=30]
+[ext_resource path="res://resources/textures/player/left_attack_spear/tile072.png" type="Texture" id=31]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile104.png" type="Texture" id=32]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile105.png" type="Texture" id=33]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile106.png" type="Texture" id=34]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile107.png" type="Texture" id=35]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile108.png" type="Texture" id=36]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile109.png" type="Texture" id=37]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile110.png" type="Texture" id=38]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile111.png" type="Texture" id=39]
+[ext_resource path="res://resources/textures/player/up_walk_spear/tile112.png" type="Texture" id=40]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile130.png" type="Texture" id=41]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile131.png" type="Texture" id=42]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile132.png" type="Texture" id=43]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile133.png" type="Texture" id=44]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile134.png" type="Texture" id=45]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile135.png" type="Texture" id=46]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile136.png" type="Texture" id=47]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile137.png" type="Texture" id=48]
+[ext_resource path="res://resources/textures/player/down_walk_spear/tile138.png" type="Texture" id=49]
+[ext_resource path="res://resources/textures/player/death/tile260.png" type="Texture" id=50]
+[ext_resource path="res://resources/textures/player/death/tile261.png" type="Texture" id=51]
+[ext_resource path="res://resources/textures/player/death/tile262.png" type="Texture" id=52]
+[ext_resource path="res://resources/textures/player/death/tile263.png" type="Texture" id=53]
+[ext_resource path="res://resources/textures/player/death/tile264.png" type="Texture" id=54]
+[ext_resource path="res://resources/textures/player/death/tile265.png" type="Texture" id=55]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile091.png" type="Texture" id=56]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile092.png" type="Texture" id=57]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile093.png" type="Texture" id=58]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile094.png" type="Texture" id=59]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile095.png" type="Texture" id=60]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile096.png" type="Texture" id=61]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile097.png" type="Texture" id=62]
+[ext_resource path="res://resources/textures/player/right_attack_spear/tile098.png" type="Texture" id=63]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile052.png" type="Texture" id=64]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile053.png" type="Texture" id=65]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile054.png" type="Texture" id=66]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile055.png" type="Texture" id=67]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile056.png" type="Texture" id=68]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile057.png" type="Texture" id=69]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile058.png" type="Texture" id=70]
+[ext_resource path="res://resources/textures/player/up_attack_spear/tile059.png" type="Texture" id=71]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile078.png" type="Texture" id=72]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile079.png" type="Texture" id=73]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile080.png" type="Texture" id=74]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile081.png" type="Texture" id=75]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile082.png" type="Texture" id=76]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile083.png" type="Texture" id=77]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile084.png" type="Texture" id=78]
+[ext_resource path="res://resources/textures/player/down_attack_spear/tile085.png" type="Texture" id=79]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=80]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
-"name": "Right",
+"name": "Left",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "Left",
+"name": "Right",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -105,72 +105,72 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 9.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": false,
-"name": "Death",
-"speed": 6.0
+"name": "Attack_Left",
+"speed": 16.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
 "name": "Up",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
-"loop": false,
-"name": "Attack_Down",
-"speed": 16.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": false,
-"name": "Attack_Right",
-"speed": 16.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
-"loop": false,
-"name": "Attack_Up",
-"speed": 16.0
-}, {
-"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ) ],
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
 "loop": true,
 "name": "Down",
 "speed": 9.0
 }, {
+"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ) ],
+"loop": false,
+"name": "Death",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ) ],
+"loop": false,
+"name": "Attack_Right",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ) ],
+"loop": false,
+"name": "Attack_Up",
+"speed": 16.0
+}, {
 "frames": [ ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
 "loop": false,
-"name": "Attack_Left",
+"name": "Attack_Down",
 "speed": 16.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 14.7266, 25.7497 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.50065, 17.1976 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -190,13 +190,13 @@ speed = 400
 
 position = Vector2( 0.643913, 14.0458 )
 scale = Vector2( 1, 0.992478 )
-frames = SubResource( 5 )
+frames = SubResource( 1 )
 animation = "Down"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 1.50247, -4.72206 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "Right"
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
@@ -207,7 +207,7 @@ __meta__ = {
 
 visible = false
 position = Vector2( -0.231964, -0.463925 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -220,11 +220,18 @@ wait_time = 0.5
 one_shot = true
 autostart = false
 
-[node name="BloodParticles" parent="." index="4" instance=ExtResource( 80 )]
+[node name="TauntTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="BloodParticles" parent="." index="5" instance=ExtResource( 80 )]
 
 visible = false
 
-[node name="HitboxRight" type="Area2D" parent="." index="5"]
+[node name="HitboxRight" type="Area2D" parent="." index="6"]
 
 editor/display_folded = true
 visible = false
@@ -245,10 +252,10 @@ __meta__ = {
 
 position = Vector2( 4.2397, -0.418701 )
 scale = Vector2( 2.85772, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="HitboxLeft" type="Area2D" parent="." index="6"]
+[node name="HitboxLeft" type="Area2D" parent="." index="7"]
 
 editor/display_folded = true
 visible = false
@@ -270,10 +277,10 @@ __meta__ = {
 
 position = Vector2( -6.16215, -0.418701 )
 scale = Vector2( 2.72349, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="HitboxDown" type="Area2D" parent="." index="7"]
+[node name="HitboxDown" type="Area2D" parent="." index="8"]
 
 editor/display_folded = true
 visible = false
@@ -295,10 +302,10 @@ __meta__ = {
 position = Vector2( -0.569759, 3.96723 )
 rotation = 1.5708
 scale = Vector2( 2.86225, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="HitboxUp" type="Area2D" parent="." index="8"]
+[node name="HitboxUp" type="Area2D" parent="." index="9"]
 
 editor/display_folded = true
 visible = false
@@ -320,10 +327,10 @@ __meta__ = {
 position = Vector2( -0.569901, 43.164 )
 rotation = 1.5708
 scale = Vector2( 2.87054, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="HitboxUpLeft" type="Area2D" parent="." index="9"]
+[node name="HitboxUpLeft" type="Area2D" parent="." index="10"]
 
 editor/display_folded = true
 visible = false
@@ -345,9 +352,9 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="HitboxUpRight" type="Area2D" parent="." index="10"]
+[node name="HitboxUpRight" type="Area2D" parent="." index="11"]
 
 editor/display_folded = true
 visible = false
@@ -369,9 +376,9 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="HitboxDownRight" type="Area2D" parent="." index="11"]
+[node name="HitboxDownRight" type="Area2D" parent="." index="12"]
 
 editor/display_folded = true
 visible = false
@@ -393,9 +400,9 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="HitboxDownLeft" type="Area2D" parent="." index="12"]
+[node name="HitboxDownLeft" type="Area2D" parent="." index="13"]
 
 editor/display_folded = true
 visible = false
@@ -417,10 +424,12 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[connection signal="timeout" from="TauntTimer" to="." method="_on_TauntTimer_timeout"]
 
 

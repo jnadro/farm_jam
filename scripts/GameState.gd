@@ -6,6 +6,7 @@ const TILE_SIZE = 32
 # class member variables go here, for example:
 onready var hud = get_node("/root/Game/HUD")
 onready var game = get_node("/root/Game")
+onready var taunt_bomb = preload("res://scenes/TauntBomb.tscn")
 
 var crop_names = ["Artichoke", "Cucumber", "Potato", "Tomato"]
 
@@ -20,6 +21,7 @@ var seed_scene = load("res://scenes/Seed.tscn")
 var picked_up_seed = null
 var score = 0
 
+const bomb_type = "Artichoke"
 const seed_drop_chance = 0.25
 
 onready var player = get_node("/root/Game/Player")
@@ -69,6 +71,16 @@ func empty_crop_inventory(crop_type):
 	crop_inventory[crop_type] = 0
 	hud.update_labels()
 	return crop_count
+	
+func has_bomb():
+	return has_crop_in_inventory(bomb_type)
+	
+func drop_taunt_bomb():
+	if has_bomb():
+		crop_inventory[bomb_type] -= 1
+		var bomb = taunt_bomb.instance()
+		bomb.position = player.global_position
+		game.add_child(bomb)
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
