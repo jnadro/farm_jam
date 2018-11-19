@@ -6,10 +6,10 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 608, 0, 0, 0, 0, 0, 608, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="MobSpawner" type="Node2D"]
+[node name="MobSpawner" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -23,10 +23,20 @@ wait_time = 10.0
 one_shot = false
 autostart = true
 
-[node name="Path2D" type="Path2D" parent="." index="1"]
+[node name="MobPath" type="Path2D" parent="." index="1"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 

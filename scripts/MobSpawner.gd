@@ -13,11 +13,13 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func get_random_position():
+	return global_position
 
 func _on_MobTimer_timeout():
 	# spawn a mob
 	var mob = Mob.instance()
-	mob.position = global_position
+	mob.position = get_random_position()
 	mob.connect("die", self, "_on_mob_die")
 	game.add_child(mob)
 
