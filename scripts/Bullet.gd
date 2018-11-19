@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 # class member variables go here, for example:
+export(float) var damage = 2.0
 var dir = Vector2()
 var vel = 300
 
@@ -16,6 +17,7 @@ func _physics_process( delta ):
 	if collision != null:
 		var collider = collision.get_collider()
 		if collider is mob:
+			collider.damage(damage)
 			queue_free()
 
 #func _process(delta):
