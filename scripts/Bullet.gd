@@ -5,6 +5,7 @@ export(float) var damage = 2.0
 var dir = Vector2()
 var vel = 300
 
+const explosion_scene = preload( "res://scenes/Explosion.tscn" )
 const mob = preload("res://scripts/Mob.gd")
 
 func _ready():
@@ -17,6 +18,9 @@ func _physics_process( delta ):
 	if collision != null:
 		var collider = collision.get_collider()
 		if collider is mob:
+			var explosion = explosion_scene.instance()
+			explosion.global_position = collider.global_position
+			collider.get_parent().add_child( explosion )
 			collider.damage(damage)
 			queue_free()
 
