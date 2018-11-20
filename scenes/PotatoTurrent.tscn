@@ -18,7 +18,7 @@ extents = Vector2( 32.491, 31.9974 )
 custom_solver_bias = 0.0
 radius = 320.0
 
-[node name="PotatoTurrent" type="Area2D" index="0"]
+[node name="PotatoTurrent" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -135,6 +135,13 @@ audio_bus_name = "Master"
 
 shape = SubResource( 2 )
 
+[node name="AddAmmo" type="Timer" parent="." index="11"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="area_entered" from="." to="." method="_on_PotatoTurrent_area_entered"]
 
 [connection signal="area_exited" from="." to="." method="_on_PotatoTurrent_area_exited"]
@@ -148,5 +155,7 @@ shape = SubResource( 2 )
 [connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
 
 [connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]
+
+[connection signal="timeout" from="AddAmmo" to="." method="_on_AddAmmo_timeout"]
 
 

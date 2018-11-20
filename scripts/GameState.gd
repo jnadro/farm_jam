@@ -60,6 +60,10 @@ func add_crop_to_inventory(crop_type, count):
 	crop_inventory[crop_type] += count
 	hud.update_labels()
 	
+func remove_crop_to_inventory(crop_type, count):
+	crop_inventory[crop_type] -= count
+	hud.update_labels()
+	
 func has_crop_in_inventory(crop_type):
 	return crop_inventory[crop_type] > 0
 

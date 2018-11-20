@@ -36,12 +36,14 @@ func start_progress():
 	$ProgressBar.visible = true
 	$ProgressBar.start(ammo_reload_time * GameState.get_crop_count_in_inventory("Potato"))
 	play_load_ammo_animation()
+	$AddAmmo.start()
 	$ReloadSound.play()
 	
 func stop_progress():
 	$ProgressBar.visible = false
 	$ProgressBar.stop()
 	stop_load_ammo_animation()
+	$AddAmmo.stop()
 	$ReloadSound.stop()
 	
 func _process(delta):
@@ -96,3 +98,9 @@ func _on_ReloadSound_finished():
 func _on_ProgressBar_progress_completed():
 	ammo += GameState.empty_crop_inventory("Potato")
 	stop_progress()
+
+
+func _on_AddAmmo_timeout():
+	var ammo_count = 1
+	GameState.remove_crop_to_inventory("Potato", ammo_count)
+	ammo += 1
