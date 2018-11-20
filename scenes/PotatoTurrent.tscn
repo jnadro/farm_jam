@@ -13,12 +13,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.491, 31.9974 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 320.0
+extents = Vector2( 224, 192 )
 
-[node name="PotatoTurrent" type="Area2D"]
+[node name="PotatoTurrent" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
