@@ -32,14 +32,9 @@ func _ready():
 	# Initialization here
 	pass
 	
-func _on_reload_completed():
-	ammo += GameState.empty_crop_inventory("Potato")
-	stop_progress()
-	
 func start_progress():
 	$ProgressBar.visible = true
 	$ProgressBar.start(ammo_reload_time * GameState.get_crop_count_in_inventory("Potato"))
-	$ProgressBar.connect("progress_completed", self, "_on_reload_completed")
 	play_load_ammo_animation()
 	$ReloadSound.play()
 	
@@ -61,11 +56,11 @@ func _process(delta):
 	$AmmoCount.text = str(ammo)
 
 func _on_PotatoTurrent_area_entered(area):
-	if area.is_in_group("Player"):
+	if area is preload("res://scripts/Player.gd"):
 		player_nearby = true
 
 func _on_PotatoTurrent_area_exited(area):
-	if area.is_in_group("Player"):
+	if area is preload("res://scripts/Player.gd"):
 		player_nearby = false
 		reloading = false
 		stop_progress()
@@ -90,3 +85,14 @@ func _on_Range_body_exited(body):
 	# lose the target if it leaves our area
 	if active_target == body:
 		active_target = null
+
+
+func _on_ReloadSound_finished():
+	# If we are still reloading, play the sound again.
+	if reloading:
+		$ReloadSound.play()
+
+
+func _on_ProgressBar_progress_completed():
+	ammo += GameState.empty_crop_inventory("Potato")
+	stop_progress()
