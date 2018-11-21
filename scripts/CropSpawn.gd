@@ -66,6 +66,7 @@ func _harvest_completed():
 	GameState.add_crop_to_inventory(crop.crop_type, 1)
 	remove_child(crop)
 	stop_progress()
+	$HarvestAudio.play()
 	state = STATES.PLANT
 
 func _on_CropSpawn_mouse_exited():
