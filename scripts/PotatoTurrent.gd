@@ -77,11 +77,12 @@ func _on_FireCooldown_timeout():
 			ammo -= 1
 			$FireSound.play()
 			active_target = null
+			if ammo == 0:
+				$OutOfAmmoIndicator.visible = true
 
 func _on_Range_body_entered(body):
 	if body.is_in_group("mobs"):
 		active_target = body
-		print(active_target)
 
 func _on_Range_body_exited(body):
 	# lose the target if it leaves our area
@@ -104,3 +105,4 @@ func _on_AddAmmo_timeout():
 	var ammo_count = 1
 	GameState.remove_crop_to_inventory("Potato", ammo_count)
 	ammo += 1
+	$OutOfAmmoIndicator.visible = false

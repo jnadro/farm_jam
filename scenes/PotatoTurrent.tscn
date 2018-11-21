@@ -18,7 +18,7 @@ extents = Vector2( 32.491, 31.9974 )
 custom_solver_bias = 0.0
 extents = Vector2( 224, 192 )
 
-[node name="PotatoTurrent" type="Area2D"]
+[node name="PotatoTurrent" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -141,6 +141,32 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="OutOfAmmoIndicator" type="Label" parent="." index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -5.0
+margin_top = -41.0
+margin_right = 3.0
+margin_bottom = -25.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.789063, 0.0869666, 0.0869666, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "!!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
 
 [connection signal="area_entered" from="." to="." method="_on_PotatoTurrent_area_entered"]
 
