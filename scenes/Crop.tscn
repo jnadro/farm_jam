@@ -17,7 +17,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 15.6121, 15.4949 )
 
-[node name="Crop" type="Area2D" index="0"]
+[node name="Crop" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -69,6 +69,26 @@ process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
+
+[node name="BounceX" type="Tween" parent="." index="5"]
+
+repeat = true
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = true
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
+[node name="BounceY" type="Tween" parent="." index="6"]
+
+repeat = true
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = true
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
 
 [connection signal="timeout" from="GrowthTimer" to="." method="_on_GrowthTimer_timeout"]
 
