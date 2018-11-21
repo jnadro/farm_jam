@@ -19,6 +19,7 @@ func _ready():
 
 func _on_Seed_area_entered(area):
 	if not taken and area is preload("res://scripts/Player.gd"):
+		$PickupSeedAudio.play()
 		emit_signal("picked_up", self)
 		hide()
 		taken = true

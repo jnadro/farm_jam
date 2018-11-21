@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Seed.gd" type="Script" id=1]
+[ext_resource path="res://resources/audio/pick_up_seed.wav" type="AudioStream" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Seed" type="Area2D"]
+[node name="Seed" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -31,6 +32,15 @@ _sections_unfolded = [ "Transform" ]
 centered = false
 region_rect = Rect2( 800, 672, 32, 32 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="PickupSeedAudio" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_entered" from="." to="." method="_on_Seed_area_entered"]
 
