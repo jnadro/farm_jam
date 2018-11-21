@@ -7,11 +7,7 @@ export (float) var SpawnRate
 
 func _ready():
 	$MobTimer.wait_time = SpawnRate
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	$MobTimer.start()
 
 func get_random_position():
 	# Choose a random location on Path2D.

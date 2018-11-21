@@ -21,7 +21,7 @@ SpawnRate = 10.0
 process_mode = 1
 wait_time = 10.0
 one_shot = false
-autostart = true
+autostart = false
 
 [node name="MobPath" type="Path2D" parent="." index="1"]
 
