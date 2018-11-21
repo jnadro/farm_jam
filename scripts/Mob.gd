@@ -138,6 +138,8 @@ func die():
 	hide()
 	# Disable collision detection
 	$CollisionShape2D.disabled = true
+	# Remove from memory
+	queue_free()
 	
 func _on_AttackTimer_timeout():
 	if position.distance_to(player.position) <= 32:

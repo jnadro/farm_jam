@@ -31,7 +31,6 @@ func _process(delta):
 	if is_alive() == false:
 		return
 		
-		
 	# Do not let the player move while attacking
 	if is_attacking() == false:
 		# Determine player direction
@@ -49,6 +48,7 @@ func _process(delta):
 			$AnimatedSprite.play()
 		else:
 			if is_attacking() == false:
+				$AnimatedSprite.frame = 0
 				$AnimatedSprite.stop()
 		
 		# Update position
@@ -145,7 +145,10 @@ func damage(dmg):
 		if $BloodParticles.emitting == false:
 			$BloodParticles.emitting = true
 		pass
-		
+
+func heal(heal_amount):
+	health = max(100, heal_amount + health)
+
 func die():
 	# Emit particles of blood
 	# Hide
@@ -163,3 +166,4 @@ func _on_Player_body_entered(body):
 
 func _on_AttackTimer_timeout():
 	can_attack = true
+	

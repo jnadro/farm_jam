@@ -48,3 +48,11 @@ func _on_WiggleTimer_timeout():
 	position = planted_position
 	$WiggleTween.interpolate_property(self, 'position', position - s, position + d, wiggle_duration, Tween.TRANS_BOUNCE, Tween.EASE_OUT_IN)
 	$WiggleTween.start()
+
+func can_eat():
+	if crop_type == "Tomato":
+		return true
+	return false
+
+func give_health():
+	return 30

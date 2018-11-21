@@ -25,6 +25,7 @@ func _ready():
 		seed_counts[crop] = 0
 		crop_inventory[crop] = 0
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
+	hud.update_labels()
 	
 func has_seeds():
 	return seed_counts[crop_names[equipped_seed_index]] > 0
@@ -36,6 +37,15 @@ func plant_active_crop():
 		hud.update_labels()
 		return crop_scenes[seed_name].instance()
 	return null
+
+func use_active_seed():
+	if has_seeds():
+		var seed_name = crop_names[equipped_seed_index]
+		var seed_instance = crop_scenes[seed_name].instance() 
+		if seed_instance.can_eat():
+			player.heal(seed_instance.give_health())
+			seed_counts[seed_name] -= 1
+			hud.update_labels()
 		
 func add_crop_to_inventory(crop_type, count):
 	crop_inventory[crop_type] += count
@@ -55,6 +65,9 @@ func _process(delta):
 	# Update game logic here.
 	if Input.is_action_just_released("pick_seed"):
 		equipped_seed_index = (equipped_seed_index + 1) % crop_names.size()
+		hud.update_labels()
+	if Input.is_action_just_pressed("use_seed"):
+		use_active_seed()
 		hud.update_labels()
 	
 # Connections

@@ -17,7 +17,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 15.6121, 15.4949 )
 
-[node name="Crop" type="Area2D" index="0"]
+[node name="Crop" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

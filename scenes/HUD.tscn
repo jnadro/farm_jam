@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/SeedPouch.png" type="Texture" id=2]
@@ -9,10 +9,11 @@
 [ext_resource path="res://resources/textures/Cucumber.png" type="Texture" id=7]
 [ext_resource path="res://resources/textures/Potato.png" type="Texture" id=8]
 [ext_resource path="res://resources/textures/Tomato.png" type="Texture" id=9]
-[ext_resource path="res://resources/textures/player/stats/style-chunk1.png" type="Texture" id=10]
-[ext_resource path="res://resources/textures/player/stats/empty-bar1.png" type="Texture" id=11]
-[ext_resource path="res://resources/textures/player/stats/heart1.png" type="Texture" id=12]
-[ext_resource path="res://resources/textures/player/stats/health-bar1.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/player/stats/health-container1.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/player/stats/style-chunk1.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/player/stats/empty-bar1.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/player/stats/heart1.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/player/stats/health-bar1.png" type="Texture" id=14]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -435,244 +436,55 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="PlayerStats" type="Node2D" parent="." index="23"]
 
-[node name="HealthDecor2" type="TextureRect" parent="PlayerStats" index="0"]
+[node name="HealthContainer" type="TextureRect" parent="PlayerStats" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 399.0
+margin_top = -1.0
+margin_right = 610.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 0
+
+[node name="HealthDecor2" type="TextureRect" parent="PlayerStats" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 443.0
-margin_top = 4.0
+margin_top = 15.0
 margin_right = 483.0
-margin_bottom = 44.0
+margin_bottom = 55.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
-[node name="HealthDecor3" type="TextureRect" parent="PlayerStats" index="1"]
+[node name="HealthDecor3" type="TextureRect" parent="PlayerStats" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 474.0
-margin_top = 4.0
+margin_top = 15.0
 margin_right = 514.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor4" type="TextureRect" parent="PlayerStats" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 482.0
-margin_top = 4.0
-margin_right = 522.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor5" type="TextureRect" parent="PlayerStats" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 490.0
-margin_top = 4.0
-margin_right = 530.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor6" type="TextureRect" parent="PlayerStats" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 498.0
-margin_top = 4.0
-margin_right = 538.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor7" type="TextureRect" parent="PlayerStats" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 506.0
-margin_top = 4.0
-margin_right = 546.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor8" type="TextureRect" parent="PlayerStats" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 514.0
-margin_top = 4.0
-margin_right = 554.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor9" type="TextureRect" parent="PlayerStats" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 522.0
-margin_top = 4.0
-margin_right = 562.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor10" type="TextureRect" parent="PlayerStats" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 530.0
-margin_top = 4.0
-margin_right = 570.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor11" type="TextureRect" parent="PlayerStats" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 538.0
-margin_top = 4.0
-margin_right = 578.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor15" type="TextureRect" parent="PlayerStats" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 548.0
-margin_top = 4.0
-margin_right = 588.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 10 )
-stretch_mode = 0
-
-[node name="HealthDecor12" type="TextureRect" parent="PlayerStats" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 546.0
-margin_top = 4.0
-margin_right = 586.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 11 )
-stretch_mode = 0
-
-[node name="HealthDecor" type="TextureRect" parent="PlayerStats" index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 456.0
-margin_top = 4.0
-margin_right = 496.0
-margin_bottom = 44.0
+margin_bottom = 55.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -682,16 +494,225 @@ size_flags_vertical = 1
 texture = ExtResource( 12 )
 stretch_mode = 0
 
-[node name="HealthBar" type="TextureProgress" parent="PlayerStats" index="13"]
+[node name="HealthDecor4" type="TextureRect" parent="PlayerStats" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 482.0
+margin_top = 15.0
+margin_right = 522.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor5" type="TextureRect" parent="PlayerStats" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 490.0
+margin_top = 15.0
+margin_right = 530.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor6" type="TextureRect" parent="PlayerStats" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 498.0
+margin_top = 15.0
+margin_right = 538.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor7" type="TextureRect" parent="PlayerStats" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 506.0
+margin_top = 15.0
+margin_right = 546.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor8" type="TextureRect" parent="PlayerStats" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_top = 15.0
+margin_right = 554.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor9" type="TextureRect" parent="PlayerStats" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 522.0
+margin_top = 15.0
+margin_right = 562.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor10" type="TextureRect" parent="PlayerStats" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 530.0
+margin_top = 15.0
+margin_right = 570.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor11" type="TextureRect" parent="PlayerStats" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 538.0
+margin_top = 15.0
+margin_right = 578.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor15" type="TextureRect" parent="PlayerStats" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 548.0
+margin_top = 15.0
+margin_right = 588.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 0
+
+[node name="HealthDecor12" type="TextureRect" parent="PlayerStats" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 546.0
+margin_top = 15.0
+margin_right = 586.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+
+[node name="HealthDecor" type="TextureRect" parent="PlayerStats" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 456.0
+margin_top = 15.0
+margin_right = 496.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+stretch_mode = 0
+
+[node name="HealthBar" type="TextureProgress" parent="PlayerStats" index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 474.0
-margin_top = 4.0
+margin_top = 15.0
 margin_right = 574.0
-margin_bottom = 20.0
+margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -702,12 +723,12 @@ min_value = 0.0
 max_value = 100.0
 step = 1.0
 page = 0.0
-value = 100.0
+value = 0.0
 exp_edit = false
 rounded = false
 texture_under = null
 texture_over = null
-texture_progress = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
