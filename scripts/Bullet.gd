@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # class member variables go here, for example:
-export(float) var damage = 2.0
+export(float) var damage = 40.0
 var dir = Vector2()
 var vel = 300
 

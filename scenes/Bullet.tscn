@@ -3,19 +3,19 @@
 [ext_resource path="res://scripts/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/Potato.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 0.912816
 
-[node name="Bullet" type="KinematicBody2D"]
+[node name="Bullet" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-damage = 2.0
+damage = 40.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -29,7 +29,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
