@@ -9,11 +9,11 @@
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/MobSpawner.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=12]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
