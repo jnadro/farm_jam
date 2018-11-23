@@ -35,6 +35,7 @@ func _process(delta):
 	pass
 
 func _on_GrowthTimer_timeout():
+	$AnimatedSprite.stop()
 	harvestable = true
 	planted_position = position
 	emit_signal("harvestable")
