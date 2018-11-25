@@ -36,13 +36,13 @@ func _process(delta):
 # Update position to follow player
 func _physics_process(delta):
 	var currentSpeed = minimum_distance_to_player()
-	var target_position = player.position
+	var target_position = player.get_global_position()
 	if state == STATES.TAUNTED and target:
-		target_position = target.position
-	var direction = (target_position - position).normalized() * currentSpeed
+		target_position = target.get_global_position()
+	var direction = (target_position - get_global_position()).normalized() * currentSpeed
 	move_and_slide(direction * delta)
-	velocity = position - prev_pos
-	prev_pos = position
+	velocity = get_global_position() - prev_pos
+	prev_pos = get_global_position()
 	
 # Delete themselves when they leave the screen
 func _on_Visibility_screen_exited():
