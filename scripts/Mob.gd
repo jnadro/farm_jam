@@ -5,7 +5,7 @@ export (int) var max_speed # Maximum speed range.
 export (int) var health
 
 var player
-var speed = 1000
+var speed = 5000
 var velocity = Vector2()
 var prev_pos
 var hue_timer = 0

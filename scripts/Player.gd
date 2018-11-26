@@ -148,6 +148,14 @@ func damage(dmg):
 
 func heal(heal_amount):
 	health = max(100, heal_amount + health)
+	display_heal()
+
+func display_heal():
+	if $Heal.emitting == false:
+		$Heal.emitting = true
+
+func can_heal():
+	return health != 100
 
 func die():
 	# Emit particles of blood

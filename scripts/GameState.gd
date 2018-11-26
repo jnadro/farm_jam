@@ -43,9 +43,10 @@ func use_active_seed():
 		var seed_name = crop_names[equipped_seed_index]
 		var seed_instance = crop_scenes[seed_name].instance() 
 		if seed_instance.can_eat():
-			player.heal(seed_instance.give_health())
-			seed_counts[seed_name] -= 1
-			hud.update_labels()
+			if player.can_heal():
+				player.heal(seed_instance.give_health())
+				seed_counts[seed_name] -= 1
+				hud.update_labels()
 		
 func add_crop_to_inventory(crop_type, count):
 	crop_inventory[crop_type] += count

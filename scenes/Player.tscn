@@ -1,28 +1,28 @@
 [gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/textures/chicken/shadow/tile003.png" type="Texture" id=2]
-[ext_resource path="res://resources/textures/chicken/shadow/tile001.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/chicken/shadow/tile001.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/chicken/shadow/tile003.png" type="Texture" id=3]
 [ext_resource path="res://resources/textures/chicken/shadow/tile000.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/chicken/shadow/tile002.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile143.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile144.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile145.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile146.png" type="Texture" id=9]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile147.png" type="Texture" id=10]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile148.png" type="Texture" id=11]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile149.png" type="Texture" id=12]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile150.png" type="Texture" id=13]
-[ext_resource path="res://resources/textures/player/right_walk_spear/tile151.png" type="Texture" id=14]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile117.png" type="Texture" id=15]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile118.png" type="Texture" id=16]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile119.png" type="Texture" id=17]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile120.png" type="Texture" id=18]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile121.png" type="Texture" id=19]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile122.png" type="Texture" id=20]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile123.png" type="Texture" id=21]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile124.png" type="Texture" id=22]
-[ext_resource path="res://resources/textures/player/left_walk_spear/tile125.png" type="Texture" id=23]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile117.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile118.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile119.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile120.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile121.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile122.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile123.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile124.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/player/left_walk_spear/tile125.png" type="Texture" id=14]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile143.png" type="Texture" id=15]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile144.png" type="Texture" id=16]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile145.png" type="Texture" id=17]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile146.png" type="Texture" id=18]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile147.png" type="Texture" id=19]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile148.png" type="Texture" id=20]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile149.png" type="Texture" id=21]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile150.png" type="Texture" id=22]
+[ext_resource path="res://resources/textures/player/right_walk_spear/tile151.png" type="Texture" id=23]
 [ext_resource path="res://resources/textures/player/up_walk_spear/tile104.png" type="Texture" id=24]
 [ext_resource path="res://resources/textures/player/up_walk_spear/tile105.png" type="Texture" id=25]
 [ext_resource path="res://resources/textures/player/up_walk_spear/tile106.png" type="Texture" id=26]
@@ -81,7 +81,7 @@
 [ext_resource path="res://resources/textures/player/death/tile265.png" type="Texture" id=79]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=80]
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=1]
 
 render_priority = 0
 trail_divisor = 1
@@ -109,7 +109,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 4.0
 scale_random = 0.0
 color = Color( 0.601563, 0, 0, 1 )
 hue_variation = 0.0
@@ -121,17 +121,17 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
-"name": "Right",
+"name": "Left",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "Left",
+"name": "Right",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -145,17 +145,17 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 16.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 16.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
@@ -195,17 +195,17 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 14.7266, 25.7497 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.50065, 17.1976 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -229,10 +229,10 @@ speed = 400
 [node name="Heal" type="Particles2D" parent="." index="0"]
 
 position = Vector2( 0, 5 )
-emitting = true
+emitting = false
 amount = 35
-lifetime = 1.5
-one_shot = false
+lifetime = 2.0
+one_shot = true
 preprocess = 0.0
 speed_scale = 1.25
 explosiveness = 0.0
@@ -242,7 +242,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 6 )
+process_material = SubResource( 1 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -251,16 +251,15 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="ShadowSprite" type="AnimatedSprite" parent="." index="1"]
 
-visible = false
 position = Vector2( 0.643913, 14.0458 )
 scale = Vector2( 1, 0.992478 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "Down"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
 position = Vector2( 1.50247, -4.72206 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "Right"
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
@@ -271,7 +270,7 @@ __meta__ = {
 
 visible = false
 position = Vector2( -0.231964, -0.463925 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -305,7 +304,7 @@ __meta__ = {
 
 position = Vector2( 4.2397, -0.418701 )
 scale = Vector2( 2.85772, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="HitboxLeft" type="Area2D" parent="." index="6"]
@@ -330,7 +329,7 @@ __meta__ = {
 
 position = Vector2( -6.16215, -0.418701 )
 scale = Vector2( 2.72349, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="HitboxDown" type="Area2D" parent="." index="7"]
@@ -355,7 +354,7 @@ __meta__ = {
 position = Vector2( -0.569759, 3.96723 )
 rotation = 1.5708
 scale = Vector2( 2.86225, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="HitboxUp" type="Area2D" parent="." index="8"]
@@ -380,7 +379,7 @@ __meta__ = {
 position = Vector2( -0.569901, 43.164 )
 rotation = 1.5708
 scale = Vector2( 2.87054, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="HitboxUpLeft" type="Area2D" parent="." index="9"]
@@ -405,7 +404,7 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="HitboxUpRight" type="Area2D" parent="." index="10"]
 
@@ -429,7 +428,7 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="HitboxDownRight" type="Area2D" parent="." index="11"]
 
@@ -453,7 +452,7 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="HitboxDownLeft" type="Area2D" parent="." index="12"]
 
@@ -477,11 +476,9 @@ __meta__ = {
 
 position = Vector2( 5.64049, 5.01377 )
 scale = Vector2( 1.58127, 1.58609 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="BloodParticles" parent="." index="13" instance=ExtResource( 80 )]
-
-visible = false
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
