@@ -1,15 +1,7 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	var start_position = $Title.position
+	var end_position = Vector2(start_position.x, 10.0)
+	var error = $TitleTween.interpolate_property($Title, 'position', start_position, end_position, .5, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
+	$TitleTween.start()

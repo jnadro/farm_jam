@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/MainMenuBackground.png" type="Texture" id=2]
@@ -6,25 +6,6 @@
 [ext_resource path="res://resources/textures/start_pressed.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/MenuBackdrop.png" type="Texture" id=5]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=6]
-
-[sub_resource type="Animation" id=1]
-
-resource_name = "intro"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Title:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.629, -268.784 ), Vector2( -5.70148, -31.7654 ) ]
-}
 
 [node name="MainMenu" type="Node" index="0"]
 
@@ -76,7 +57,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="Title" type="Node2D" parent="." index="2"]
 
-position = Vector2( -5.70148, -31.7654 )
+position = Vector2( 1.6, -268 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Scroll" type="TextureRect" parent="Title" index="0"]
@@ -125,15 +106,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="TitleTween" type="Tween" parent="." index="3"]
 
-root_node = NodePath("..")
-autoplay = "intro"
+repeat = false
 playback_process_mode = 1
-playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/intro = SubResource( 1 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
 
 
