@@ -13,8 +13,11 @@ _data = {
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-Mob = null
 SpawnRate = 10.0
+Cow = null
+Chicken = null
+Pig = null
+Pack = null
 
 [node name="MobTimer" type="Timer" parent="." index="0"]
 
