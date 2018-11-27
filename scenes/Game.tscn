@@ -9,15 +9,15 @@
 [ext_resource path="res://scenes/Seed.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/MobSpawner.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/Cow.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Pig.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Cow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Pig.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=16]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -468,11 +468,10 @@ position = Vector2( 664.99, 297.019 )
 [node name="MobSpawner" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 32, 64 )
-Mob = ExtResource( 10 )
-Cow = ExtResource( 11 )
-Chicken = ExtResource( 12 )
-Pig = ExtResource( 13 )
-Pack = ExtResource( 10 )
+Cow = ExtResource( 10 )
+Chicken = ExtResource( 11 )
+Pig = ExtResource( 12 )
+Pack = ExtResource( 13 )
 
 [node name="Seeds" type="Node" parent="." index="17"]
 
@@ -489,5 +488,7 @@ position = Vector2( 674.449, 302.637 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="GameState" parent="." index="21" instance=ExtResource( 16 )]
+
+[connection signal="die" from="Player" to="." method="_on_Player_die"]
 
 

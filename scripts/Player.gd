@@ -1,5 +1,6 @@
 extends Area2D
 signal player_took_damage
+signal die
 
 # Member variables
 export (int) var speed
@@ -162,9 +163,13 @@ func die():
 	# Hide
 	$AnimatedSprite.animation = "Death"
 	$AnimatedSprite.play()
+	$AnimatedSprite.connect("animation_finished", self, "_on_die_finished")
 	#hide()
 	# Disable collision detection
 	#$CollisionShape2D.disabled = true
+	
+func _on_die_finished():
+	emit_signal("die")
 
 func _on_Player_body_entered(body):
 	pass

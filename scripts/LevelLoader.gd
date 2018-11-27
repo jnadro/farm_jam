@@ -2,9 +2,11 @@ extends Node
 
 onready var MainMenuScene = preload("res://scenes/MainMenu.tscn")
 onready var GameScene = preload("res://scenes/Game.tscn")
+onready var GameOverScene = preload("res://scenes/GameOver.tscn")
 
 var main_menu = null
 var game = null
+var game_over = null
 
 func _ready():
 	main_menu = MainMenuScene.instance()
@@ -13,11 +15,13 @@ func _ready():
 	
 func _on_start_game():
 	game = GameScene.instance()
+	game.connect("game_over", self, "_on_game_over")
 	remove_child(main_menu)
 	main_menu = null
 	add_child(game)
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	
+func _on_game_over():
+	game_over = GameOverScene.instance()
+	remove_child(game)
+	game = null
+	add_child(game_over)

@@ -1,5 +1,7 @@
 extends Node
 
+signal game_over
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -14,3 +16,5 @@ func _process(delta):
 	if Input.is_action_just_released('help'):
 		$HelpMenu/MenuItems.visible = !$HelpMenu/MenuItems.visible
 
+func _on_Player_die():
+	emit_signal("game_over")
