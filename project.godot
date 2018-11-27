@@ -11,12 +11,8 @@ config_version=3
 [application]
 
 config/name="Farm Jam"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/LevelLoader.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-GameState="*res://scripts/GameState.gd"
 
 [display]
 

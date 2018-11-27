@@ -1,16 +1,10 @@
 extends CanvasLayer
 
-# class member variables go here, for example:
-
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
 func _process(delta):
 	update_labels()
 
 func update_labels():
+	var GameState = get_parent().get_node("GameState")
 	$ArtichokeSeedLabel.text = str(GameState.seed_counts["Artichoke"])
 	$CucumberSeedLabel.text = str(GameState.seed_counts["Cucumber"])
 	$PotatoSeedLabel.text = str(GameState.seed_counts["Potato"])

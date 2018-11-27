@@ -10,9 +10,11 @@ var damage = 10
 var hitbox_lookup
 var health = 100
 var direction
+var GameState = null
 
 # Called once
 func _ready():
+	GameState = get_parent().get_node("GameState")
 	screensize = get_viewport().size
 	hitbox_lookup = {
 		"Right": $HitboxRight,

@@ -4,6 +4,7 @@ extends Area2D
 enum STATES { PLANT, GROWING, HARVEST }
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
+onready var GameState = get_node("../../GameState")
 var state = STATES.PLANT
 var pressed = false
 var progress_bar = null
@@ -11,10 +12,6 @@ var planting_time = 1.0
 var crop = null
 var player_nearby = false
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
 	
 func occupied():
 	return crop != null

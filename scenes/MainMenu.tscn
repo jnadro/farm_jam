@@ -7,7 +7,7 @@
 [ext_resource path="res://resources/textures/MenuBackdrop.png" type="Texture" id=5]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=6]
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="MainMenu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -115,5 +115,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 _sections_unfolded = [ "playback" ]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 
 

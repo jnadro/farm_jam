@@ -4,8 +4,8 @@ extends Node
 const TILE_SIZE = 32
 
 # class member variables go here, for example:
-onready var hud = get_node("/root/Game/HUD")
-onready var game = get_node("/root/Game")
+onready var hud = get_node("../HUD")
+onready var game = get_node("..")
 onready var taunt_bomb = preload("res://scenes/TauntBomb.tscn")
 
 var crop_names = ["Artichoke", "Cucumber", "Potato", "Tomato"]
@@ -24,7 +24,7 @@ var score = 0
 const bomb_type = "Artichoke"
 const seed_drop_chance = 0.25
 
-onready var player = get_node("/root/Game/Player")
+onready var player = get_node("../Player")
 
 func _ready():
 	for crop in crop_names:

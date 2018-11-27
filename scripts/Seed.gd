@@ -8,6 +8,7 @@ var crop_scene = null
 var taken = false
 
 func _ready():
+	var GameState = get_parent().get_node("GameState")
 	var resource_path = "res://resources/textures/" + type + "/"
 	$Sprite.texture = load(resource_path + "Seeds.png")
 	connect("picked_up", GameState, "_on_Seed_picked_up")

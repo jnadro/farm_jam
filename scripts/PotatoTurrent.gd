@@ -1,6 +1,7 @@
 extends Area2D
 
 # class member variables go here, for example:
+var GameState = null
 var ammo = 1
 var reloading = false
 var active_target = null
@@ -30,7 +31,7 @@ func stop_load_ammo_animation():
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+	GameState = get_parent().get_node("GameState")
 	
 func start_progress():
 	$ProgressBar.visible = true

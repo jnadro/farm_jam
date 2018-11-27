@@ -1,7 +1,5 @@
 extends Node2D
 
-onready var game = get_node("/root/Game")
-
 export (PackedScene) var Mob
 export (float) var SpawnRate
 
@@ -20,12 +18,13 @@ func _on_MobTimer_timeout():
 	mob.position = get_random_position()
 	mob.connect("die", self, "_on_mob_die")
 	mob.add_to_group("mobs")
-	game.add_child(mob)
+	get_parent().add_child(mob)
 	
 	# start the time again
 	$MobTimer.start()
 
 func _on_mob_die(mob):
+	var GameState = get_parent().get_node("GameState")
 	GameState.add_score(10)
 	# Randomly spawn a seed inside a radius 10 circle
 	# around the mob position
@@ -34,5 +33,5 @@ func _on_mob_die(mob):
 	var rand_y = randf() * 2.0 - 1.0
 	var spawn_offset = Vector2(rand_x * seed_spawn_radius, rand_y * seed_spawn_radius)
 	GameState.spawn_random_seed(mob.global_position + spawn_offset)
-	game.remove_child(mob)
+	get_parent().remove_child(mob)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=13]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -465,7 +466,6 @@ position = Vector2( 664.99, 297.019 )
 
 position = Vector2( 32, 64 )
 Mob = ExtResource( 10 )
-SpawnRate = 2.0
 
 [node name="Seeds" type="Node" parent="." index="17"]
 
@@ -480,5 +480,7 @@ position = Vector2( 674.449, 302.637 )
 [node name="HelpMenu" parent="." index="20" instance=ExtResource( 12 )]
 
 _sections_unfolded = [ "Pause" ]
+
+[node name="GameState" parent="." index="21" instance=ExtResource( 13 )]
 
 
