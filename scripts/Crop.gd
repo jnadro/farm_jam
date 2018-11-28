@@ -13,7 +13,9 @@ func _ready():
 	var sprite_frames = $AnimatedSprite.get_sprite_frames()
 	sprite_frames.add_animation("Grow")
 	sprite_frames.set_animation_loop("Grow", false)
-	var resource_path = "res://resources/textures/" + crop_type + "/"
+	var base_path = "res://resources/textures/"
+	var resource_path = base_path + crop_type + "/"
+	sprite_frames.add_frame("Grow", load(base_path + "Planted.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Seed.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage1.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage2.png"))
