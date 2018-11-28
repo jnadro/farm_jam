@@ -17,7 +17,7 @@ func get_random_position():
 	return $MobPath/MobSpawnLocation.position
 
 func _on_MobTimer_timeout():
-	var num_spawns = 3
+	var num_spawns = (randi() % 3) + 1
 	var pack = Pack.instance()
 	pack.position = get_random_position()
 	
