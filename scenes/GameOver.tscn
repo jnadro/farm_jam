@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/MainMenuBackground.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://resources/textures/start_pressed.png" type="Texture" id=4]
 [ext_resource path="res://resources/textures/MenuBackdrop.png" type="Texture" id=5]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=6]
+[ext_resource path="res://resources/audio/GameOver.wav" type="AudioStream" id=7]
 
 [node name="GameOver" type="Node" index="0"]
 
@@ -142,6 +143,15 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 _sections_unfolded = [ "playback" ]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 
