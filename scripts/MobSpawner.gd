@@ -4,6 +4,7 @@ export (float) var SpawnRate
 export (PackedScene) var Cow
 export (PackedScene) var Chicken
 export (PackedScene) var Pig
+export (PackedScene) var Bluejay
 export (PackedScene) var Pack
 
 func _ready():
@@ -21,7 +22,7 @@ func _on_MobTimer_timeout():
 	pack.position = get_random_position()
 	
 	for i in range(num_spawns):
-		var rand_int = 1#randi() % 3
+		var rand_int = randi() % 4
 		var mob_type = Chicken
 		match rand_int:
 			0:
@@ -30,6 +31,8 @@ func _on_MobTimer_timeout():
 				mob_type = Chicken
 			2:
 				mob_type = Pig
+			3:
+				mob_type = Bluejay
 		# spawn a mob
 		var mob = mob_type.instance()
 		mob.connect("die", self, "_on_mob_die")

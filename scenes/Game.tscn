@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=2]
@@ -12,10 +12,11 @@
 [ext_resource path="res://scenes/Cow.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Chicken.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Pig.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/Bluejay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Pack.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=17]
 
 [node name="Game" type="Node"]
 
@@ -471,23 +472,24 @@ position = Vector2( 32, 64 )
 Cow = ExtResource( 10 )
 Chicken = ExtResource( 11 )
 Pig = ExtResource( 12 )
-Pack = ExtResource( 13 )
+Bluejay = ExtResource( 13 )
+Pack = ExtResource( 14 )
 
 [node name="Seeds" type="Node" parent="." index="17"]
 
-[node name="PotatoTurrent" parent="." index="18" instance=ExtResource( 14 )]
+[node name="PotatoTurrent" parent="." index="18" instance=ExtResource( 15 )]
 
 position = Vector2( 336.166, 303.834 )
 
-[node name="PotatoTurrent2" parent="." index="19" instance=ExtResource( 14 )]
+[node name="PotatoTurrent2" parent="." index="19" instance=ExtResource( 15 )]
 
 position = Vector2( 674.449, 302.637 )
 
-[node name="HelpMenu" parent="." index="20" instance=ExtResource( 15 )]
+[node name="HelpMenu" parent="." index="20" instance=ExtResource( 16 )]
 
 _sections_unfolded = [ "Pause" ]
 
-[node name="GameState" parent="." index="21" instance=ExtResource( 16 )]
+[node name="GameState" parent="." index="21" instance=ExtResource( 17 )]
 
 [connection signal="die" from="Player" to="." method="_on_Player_die"]
 

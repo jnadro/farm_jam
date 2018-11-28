@@ -17,6 +17,7 @@ SpawnRate = 10.0
 Cow = null
 Chicken = null
 Pig = null
+Bluejay = null
 Pack = null
 
 [node name="MobTimer" type="Timer" parent="." index="0"]
