@@ -15,7 +15,7 @@ _sections_unfolded = [ "Resource" ]
 [node name="Artichoke" instance=ExtResource( 1 )]
 
 crop_type = "Artichoke"
-growth_time = 11.0
+growth_time = 20.0
 sell_price = 120
 
 [node name="AnimatedSprite" parent="." index="0"]

@@ -2,7 +2,7 @@ extends Area2D
 
 # class member variables go here, for example:
 var GameState = null
-var ammo = 1
+var ammo = 0
 var reloading = false
 var active_target = null
 var player_nearby = false
