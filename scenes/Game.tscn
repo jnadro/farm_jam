@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/FarmTileSet.tres" type="TileSet" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=17]
+[ext_resource path="res://resources/audio/Your feet and your hands.wav" type="AudioStream" id=18]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -440,6 +441,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Chicken" parent="." index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 431.937, 317.985 )
+health = 30
 
 [node name="Tomato" parent="." index="10" instance=ExtResource( 7 )]
 
@@ -469,6 +471,7 @@ position = Vector2( 664.99, 297.019 )
 [node name="MobSpawner" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 32, 64 )
+SpawnRate = 20.0
 Cow = ExtResource( 10 )
 Chicken = ExtResource( 11 )
 Pig = ExtResource( 12 )
@@ -490,6 +493,15 @@ position = Vector2( 674.449, 302.637 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="GameState" parent="." index="21" instance=ExtResource( 17 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="22"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="die" from="Player" to="." method="_on_Player_die"]
 
