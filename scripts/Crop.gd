@@ -8,9 +8,16 @@ export(float) var growth_time = 5.0
 export(int) var sell_price = 60
 var harvestable = false
 var planted_position = null
+var crop_animated_sprite = null
 
 func _ready():
-	var sprite_frames = $AnimatedSprite.get_sprite_frames()
+	crop_animated_sprite = AnimatedSprite.new()
+	var sprite_frames = SpriteFrames.new()
+	crop_animated_sprite.set_sprite_frames(sprite_frames)
+	crop_animated_sprite.animation = "Grow"
+	crop_animated_sprite.set_centered(false)
+	add_child(crop_animated_sprite)
+	
 	sprite_frames.add_animation("Grow")
 	sprite_frames.set_animation_loop("Grow", false)
 	var base_path = "res://resources/textures/"
@@ -25,7 +32,7 @@ func _ready():
 	
 	var fps = sprite_frames.get_frame_count("Grow") / growth_time
 	sprite_frames.set_animation_speed("Grow", fps )
-	$AnimatedSprite.play()
+	crop_animated_sprite.play()
 	$GrowthTimer.wait_time = growth_time
 	$GrowthTimer.start()
 	
@@ -37,7 +44,7 @@ func _process(delta):
 	pass
 
 func _on_GrowthTimer_timeout():
-	$AnimatedSprite.stop()
+	crop_animated_sprite.stop()
 	harvestable = true
 	planted_position = position
 	emit_signal("harvestable")
