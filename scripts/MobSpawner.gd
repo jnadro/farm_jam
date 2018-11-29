@@ -7,11 +7,6 @@ var Cow
 var Bluejay
 var Pig
 export (float) var SpawnRate
-export (PackedScene) var Cow
-export (PackedScene) var Chicken
-export (PackedScene) var Pig
-export (PackedScene) var Bluejay
-export (PackedScene) var Pack
 
 func _ready():
 	$MobTimer.wait_time = SpawnRate
