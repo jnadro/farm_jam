@@ -127,11 +127,7 @@ bus = "Master"
 
 [node name="PotatoTurrent2" parent="." index="23" instance=ExtResource( 6 )]
 
-[node name="HelpMenu" parent="." index="24" instance=ExtResource( 7 )]
-
-_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
-
-[node name="Collision" type="Node" parent="." index="25"]
+[node name="Collision" type="Node" parent="." index="24"]
 
 editor/display_folded = true
 
