@@ -17,7 +17,7 @@
 [ext_resource path="res://scenes/PotatoTurrent.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/HelpMenu.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/GameState.tscn" type="PackedScene" id=17]
-[ext_resource path="res://resources/audio/Your feet and your hands.wav" type="AudioStream" id=18]
+[ext_resource path="res://resources/audio/PulsePSG2.ogg" type="AudioStream" id=18]
 
 [node name="Game" type="Node" index="0"]
 
