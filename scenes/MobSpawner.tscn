@@ -6,17 +6,20 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 10, -50.1913, -3.58509, 5.37764, 60.9373, 1020, 10, 0, 0, 0, 0, 1030, 620, 0, 0, 0, 0, 0, 620, 0, 0, 0, 0, 0, 10 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 608, 0, 0, 0, 0, 0, 608, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="MobSpawner" type="Node"]
+[node name="MobSpawner" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+Mob = null
+SpawnRate = 10.0
 
 [node name="MobTimer" type="Timer" parent="." index="0"]
 
 process_mode = 1
-wait_time = 0.15
+wait_time = 10.0
 one_shot = false
 autostart = true
 

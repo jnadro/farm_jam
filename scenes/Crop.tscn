@@ -70,6 +70,26 @@ wait_time = 5.0
 one_shot = false
 autostart = false
 
+[node name="BounceX" type="Tween" parent="." index="5"]
+
+repeat = true
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = true
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
+[node name="BounceY" type="Tween" parent="." index="6"]
+
+repeat = true
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = true
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
 [connection signal="timeout" from="GrowthTimer" to="." method="_on_GrowthTimer_timeout"]
 
 [connection signal="timeout" from="WiggleTimer" to="." method="_on_WiggleTimer_timeout"]

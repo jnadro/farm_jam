@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+signal die(mob)
+
+enum STATES { SPAWNING, TAUNTED, HUNT }
+
 export (int) var min_speed # Minimum speed range.
 export (int) var max_speed # Maximum speed range.
 export (int) var health
@@ -10,6 +14,8 @@ var velocity = Vector2()
 var prev_pos
 var hue_timer = 0
 var colorDecaySpeed = 60
+var state = STATES.HUNT
+var target = null
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -26,12 +32,14 @@ func _process(delta):
 	var facing_direction = get_facing_direction(velocity)
 	$AnimatedSprite.animation = facing_direction
 	update_shadow_sprite(facing_direction)
-	
 
 # Update position to follow player
 func _physics_process(delta):
 	var currentSpeed = minimum_distance_to_player()
-	var direction = (player.position - position).normalized() * currentSpeed
+	var target_position = player.position
+	if state == STATES.TAUNTED and target:
+		target_position = target.position
+	var direction = (target_position - position).normalized() * currentSpeed
 	move_and_slide(direction * delta)
 	velocity = position - prev_pos
 	prev_pos = position
@@ -76,8 +84,9 @@ func get_facing_direction(velocity):
 	return $AnimatedSprite.animation;
 	
 func update_shadow_sprite (direction):
-	if $ShadowSprite:
-		$ShadowSprite.animation = direction
+	#if $ShadowSprite:
+	#	$ShadowSprite.animation = direction
+	pass
 
 func minimum_distance_to_player():
 	if position.distance_to(player.position) <= 32:
@@ -140,8 +149,21 @@ func die():
 	$CollisionShape2D.disabled = true
 	# Remove from memory
 	queue_free()
+	# Let others know a mob died
+	emit_signal("die", self)
 	
 func _on_AttackTimer_timeout():
 	if position.distance_to(player.position) <= 32:
 		player.damage(10)
+
+func taunt(in_target):
+	state = STATES.TAUNTED
+	target = in_target
+	$TauntIndicator.visible = true
+	$TauntSound.play()
+		
+func _on_taunt_timeout():
+	state = STATES.HUNT
+	target = null
+	$TauntIndicator.visible = false	
 

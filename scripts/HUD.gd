@@ -7,10 +7,8 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	update_labels()
 
 func update_labels():
 	$ArtichokeSeedLabel.text = str(GameState.seed_counts["Artichoke"])
@@ -26,3 +24,5 @@ func update_labels():
 	$Selected.position.x = GameState.equipped_seed_index * GameState.TILE_SIZE * 2
 	
 	$PlayerStats/HealthBar.value = GameState.player.health
+	
+	$Score/ScoreValue.text = str(GameState.score)

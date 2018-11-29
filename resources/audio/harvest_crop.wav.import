@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/harvest_crop.wav-1720a9fd1a274a931fd1ea1d5b288f50.sample"
+
+[deps]
+
+source_file="res://resources/audio/harvest_crop.wav"
+dest_files=[ "res://.import/harvest_crop.wav-1720a9fd1a274a931fd1ea1d5b288f50.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -12,7 +12,7 @@ func _ready():
 func start(duration):
 	$Tween.interpolate_property($TextureProgress,
             'value', 0, 100,
-            duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+            duration, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
 	
 func stop():

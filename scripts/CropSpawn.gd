@@ -2,7 +2,6 @@ extends Area2D
 
 # class member variables go here, for example:
 enum STATES { PLANT, GROWING, HARVEST }
-onready var collection_box = get_node("/root/Game/CollectionBox")
 onready var ProgressBar = preload("res://scenes/ProgressBar.tscn")
 onready var Crop = preload("res://scenes/Crop.tscn")
 var state = STATES.PLANT
@@ -67,6 +66,7 @@ func _harvest_completed():
 	GameState.add_crop_to_inventory(crop.crop_type, 1)
 	remove_child(crop)
 	stop_progress()
+	$HarvestAudio.play()
 	state = STATES.PLANT
 
 func _on_CropSpawn_mouse_exited():
@@ -74,13 +74,13 @@ func _on_CropSpawn_mouse_exited():
 		stop_progress()
 
 func _on_CropSpawn_area_entered(area):
-	if area.is_in_group("Player"):
+	if area is preload("res://scripts/Player.gd"):
 		if state == STATES.PLANT or state == STATES.HARVEST:
 			$Highlight.show()		
 		player_nearby = true
 
 func _on_CropSpawn_area_exited(area):
-	if area.is_in_group("Player"):
+	if area is preload("res://scripts/Player.gd"):
 		$Highlight.hide()
 		player_nearby = false
 		if progress_bar:

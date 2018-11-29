@@ -5,6 +5,7 @@ signal player_took_damage
 export (int) var speed
 var screensize
 var can_attack = true
+var can_taunt = true
 var damage = 10
 var hitbox_lookup
 var health = 100
@@ -30,6 +31,12 @@ func _ready():
 func _process(delta):
 	if is_alive() == false:
 		return
+		
+	if Input.is_action_pressed("drop_bomb") and GameState.has_bomb() and can_player_taunt():
+		can_taunt = false
+		$TauntTimer.start()
+		$DropTauntBomb.play()
+		GameState.drop_taunt_bomb()
 		
 	# Do not let the player move while attacking
 	if is_attacking() == false:
@@ -86,6 +93,9 @@ func attack_mobs(mobs, force):
 	
 func can_player_attack ():
 	return can_attack && is_alive()
+	
+func can_player_taunt():
+	return can_taunt && is_alive()
 	
 func is_alive():
 	return health > 0
@@ -174,4 +184,7 @@ func _on_Player_body_entered(body):
 
 func _on_AttackTimer_timeout():
 	can_attack = true
-	
+
+
+func _on_TauntTimer_timeout():
+	can_taunt = true

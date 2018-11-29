@@ -1,22 +1,42 @@
-extends Node
-var Cow
-var Chicken
-var Bluejay
-var Pig
+extends Node2D
+
+onready var game = get_node("/root/Game")
+
+export (PackedScene) var Mob
+export (float) var SpawnRate
 
 func _ready():
-	Cow = load("res://scenes/Cow.tscn")
-	Chicken = load("res://scenes/Chicken.tscn")
-	Bluejay = load("res://scenes/Bluejay.tscn")
-	Pig = load("res://scenes/Pig.tscn")
+	$MobTimer.wait_time = SpawnRate
 
-func _process(delta):
-	pass
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
 
-func _on_MobTimer_timeout():
+func get_random_position():
 	# Choose a random location on Path2D.
 	$MobPath/MobSpawnLocation.set_offset(randi())
-	# Create a Mob instance and add it to the scene.
-	var mob = Chicken.instance()
-	mob.position = $MobPath/MobSpawnLocation.position
-	add_child(mob)
+	return $MobPath/MobSpawnLocation.position
+
+func _on_MobTimer_timeout():
+	# spawn a mob
+	var mob = Mob.instance()
+	mob.position = get_random_position()
+	mob.connect("die", self, "_on_mob_die")
+	mob.add_to_group("mobs")
+	game.add_child(mob)
+	
+	# start the time again
+	$MobTimer.start()
+
+func _on_mob_die(mob):
+	GameState.add_score(10)
+	# Randomly spawn a seed inside a radius 10 circle
+	# around the mob position
+	var seed_spawn_radius = 10.0
+	var rand_x = randf() * 2.0 - 1.0
+	var rand_y = randf() * 2.0 - 1.0
+	var spawn_offset = Vector2(rand_x * seed_spawn_radius, rand_y * seed_spawn_radius)
+	GameState.spawn_random_seed(mob.global_position + spawn_offset)
+	game.remove_child(mob)
+	

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/potato_impact.wav-5a850972c2d701198c68934253a18286.sample"
+
+[deps]
+
+source_file="res://resources/audio/potato_impact.wav"
+dest_files=[ "res://.import/potato_impact.wav-5a850972c2d701198c68934253a18286.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
