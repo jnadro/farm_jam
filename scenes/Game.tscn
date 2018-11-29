@@ -116,8 +116,6 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Collision" type="Node" parent="." index="20"]
 
-editor/display_folded = true
-
 [node name="TreeEdge" parent="Collision" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 0, -64 )
