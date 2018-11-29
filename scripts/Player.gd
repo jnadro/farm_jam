@@ -158,7 +158,7 @@ func damage(dmg):
 
 func heal(heal_amount):
 	health = max(100, heal_amount + health)
-	display_heal()
+	#display_heal()
 
 func display_heal():
 	if $Heal.emitting == false:

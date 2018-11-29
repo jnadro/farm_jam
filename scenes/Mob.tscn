@@ -2,22 +2,22 @@
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
 [ext_resource path="res://resources/samples/hurt.wav" type="AudioStream" id=2]
-[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=3]
-[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=4]
-[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=5]
-[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=6]
-[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=7]
-[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=8]
-[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=9]
-[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=10]
-[ext_resource path="res://resources/textures/chicken/up/Image10000.png" type="Texture" id=11]
-[ext_resource path="res://resources/textures/chicken/up/Image10001.png" type="Texture" id=12]
-[ext_resource path="res://resources/textures/chicken/up/Image10002.png" type="Texture" id=13]
-[ext_resource path="res://resources/textures/chicken/up/Image10003.png" type="Texture" id=14]
-[ext_resource path="res://resources/textures/chicken/down/Image11.png" type="Texture" id=15]
-[ext_resource path="res://resources/textures/chicken/down/Image21.png" type="Texture" id=16]
-[ext_resource path="res://resources/textures/chicken/down/Image31.png" type="Texture" id=17]
-[ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=18]
+[ext_resource path="res://resources/textures/chicken/right/Image11.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/chicken/right/Image21.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/chicken/right/Image31.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/chicken/right/Image41.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/chicken/left/Image11.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/chicken/left/Image21.png" type="Texture" id=8]
+[ext_resource path="res://resources/textures/chicken/left/Image31.png" type="Texture" id=9]
+[ext_resource path="res://resources/textures/chicken/left/Image41.png" type="Texture" id=10]
+[ext_resource path="res://resources/textures/chicken/down/Image11.png" type="Texture" id=11]
+[ext_resource path="res://resources/textures/chicken/down/Image21.png" type="Texture" id=12]
+[ext_resource path="res://resources/textures/chicken/down/Image31.png" type="Texture" id=13]
+[ext_resource path="res://resources/textures/chicken/down/Image41.png" type="Texture" id=14]
+[ext_resource path="res://resources/textures/chicken/up/Image10000.png" type="Texture" id=15]
+[ext_resource path="res://resources/textures/chicken/up/Image10001.png" type="Texture" id=16]
+[ext_resource path="res://resources/textures/chicken/up/Image10002.png" type="Texture" id=17]
+[ext_resource path="res://resources/textures/chicken/up/Image10003.png" type="Texture" id=18]
 [ext_resource path="res://scenes/BloodParticles.tscn" type="PackedScene" id=19]
 [ext_resource path="res://resources/fonts/editundo.tres" type="DynamicFont" id=20]
 [ext_resource path="res://resources/audio/taunt.wav" type="AudioStream" id=21]
@@ -27,22 +27,22 @@
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "Right",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Up",
+"name": "Down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "Down",
+"name": "Up",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -52,7 +52,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 16.4217, 14.7831 )
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
