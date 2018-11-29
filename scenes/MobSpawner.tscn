@@ -9,7 +9,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 608, 0, 0, 0, 0, 0, 608, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="MobSpawner" type="Node2D" index="0"]
+[node name="MobSpawner" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -30,6 +30,8 @@ autostart = false
 [node name="MobPath" type="Path2D" parent="." index="1"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( 0, -10 )
+scale = Vector2( 1, 0.997424 )
 curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]

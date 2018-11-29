@@ -9,7 +9,7 @@ export (int) var max_speed # Maximum speed range.
 export (int) var health
 
 var player
-var speed = 1000
+var speed = 5000
 var velocity = Vector2()
 var prev_pos
 var hue_timer = 0
@@ -19,8 +19,6 @@ var target = null
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	health = 40
 	player = get_tree().get_nodes_in_group("player")[0]
 	prev_pos = position
 
@@ -147,6 +145,8 @@ func die():
 	hide()
 	# Disable collision detection
 	$CollisionShape2D.disabled = true
+	# Remove from memory
+	queue_free()
 	# Let others know a mob died
 	emit_signal("die", self)
 	

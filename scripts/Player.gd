@@ -58,6 +58,7 @@ func _process(delta):
 			$AnimatedSprite.play()
 		else:
 			if is_attacking() == false:
+				$AnimatedSprite.frame = 0
 				$AnimatedSprite.stop()
 		
 		# Update position
@@ -157,7 +158,18 @@ func damage(dmg):
 		if $BloodParticles.emitting == false:
 			$BloodParticles.emitting = true
 		pass
-		
+
+func heal(heal_amount):
+	health = max(100, heal_amount + health)
+	#display_heal()
+
+func display_heal():
+	if $Heal.emitting == false:
+		$Heal.emitting = true
+
+func can_heal():
+	return health != 100
+
 func die():
 	# Emit particles of blood
 	# Hide
