@@ -2,25 +2,32 @@ extends Node2D
 
 onready var game = get_node("/root/Game")
 
-export (PackedScene) var Mob
+var Chicken
+var Cow
+var Bluejay
+var Pig
 export (float) var SpawnRate
 
 func _ready():
 	$MobTimer.wait_time = SpawnRate
+	Cow = load("res://scenes/Cow.tscn")
+	Chicken = load("res://scenes/Chicken.tscn")
+	Bluejay = load("res://scenes/Bluejay.tscn")
+	Pig = load("res://scenes/Pig.tscn")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
 
-func get_random_position():
+func get_random_position():	
 	# Choose a random location on Path2D.
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	return $MobPath/MobSpawnLocation.position
 
 func _on_MobTimer_timeout():
 	# spawn a mob
-	var mob = Mob.instance()
+	var mob = random_instance()
 	mob.position = get_random_position()
 	mob.connect("die", self, "_on_mob_die")
 	mob.add_to_group("mobs")
@@ -28,6 +35,18 @@ func _on_MobTimer_timeout():
 	
 	# start the time again
 	$MobTimer.start()
+	
+func random_instance ():
+	var integer = randi()%11+1
+	
+	if integer >= 1 and integer < 6:
+		return Bluejay.instance()
+	elif integer >= 6 and integer <= 8:
+		return Chicken.instance()
+	elif integer == 9:
+		return Pig.instance()
+	else:
+		return Cow.instance()
 
 func _on_mob_die(mob):
 	GameState.add_score(10)

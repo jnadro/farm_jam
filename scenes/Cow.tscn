@@ -88,7 +88,6 @@ animation = "Up"
 
 frames = SubResource( 2 )
 animation = "Up"
-frame = 2
 
 [node name="CollisionShape2D" parent="." index="3"]
 
