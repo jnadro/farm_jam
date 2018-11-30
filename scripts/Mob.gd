@@ -97,7 +97,7 @@ func minimum_distance_to_player():
 func damage(dmg):
 	health -= dmg
 
-	#$HurtSample.play()
+	$HurtSample.play()
 	if health <= 0:
 		die()
 	else:
