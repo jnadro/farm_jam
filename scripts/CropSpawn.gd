@@ -57,6 +57,7 @@ func _planting_completed():
 	state = STATES.GROWING
 	
 func _on_crop_harvestable():
+	$CropReady.play()
 	state = STATES.HARVEST
 
 func _harvest_completed():

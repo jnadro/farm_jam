@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/CropSpawn.gd" type="Script" id=1]
 [ext_resource path="res://resources/textures/plowed_soil.png" type="Texture" id=2]
 [ext_resource path="res://resources/audio/harvest_crop.wav" type="AudioStream" id=3]
+[ext_resource path="res://resources/audio/crop_ready.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 
@@ -17,7 +18,7 @@ filter_clip = false
 custom_solver_bias = 0.0
 extents = Vector2( 16.017, 15.9296 )
 
-[node name="CropSpawn" type="Area2D"]
+[node name="CropSpawn" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -64,6 +65,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="HarvestAudio" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="CropReady" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
