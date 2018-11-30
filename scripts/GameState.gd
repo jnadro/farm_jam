@@ -22,7 +22,7 @@ var picked_up_seed = null
 var score = 0
 
 const bomb_type = "Artichoke"
-const seed_drop_chance = 0.25
+const seed_drop_chance = .75
 
 onready var player = get_node("../Player")
 
@@ -47,7 +47,7 @@ func spawn_random_seed(position):
 		new_seed.position = position
 		var rand_crop_idx = randi() % crop_names.size()
 		new_seed.type = crop_names[rand_crop_idx]
-		game.get_node("Seeds").add_child(new_seed)
+		game.add_child(new_seed)
 		
 func plant_active_crop():
 	if has_seeds():
