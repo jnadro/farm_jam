@@ -32,7 +32,11 @@ func _ready():
 		crop_inventory[crop] = 0
 		crop_scenes[crop] = load("res://scenes/" + crop + ".tscn")
 	hud.update_labels()
-	crop_inventory["Potato"] += 20
+	
+	crop_inventory["Artichoke"] += 1
+	crop_inventory["Cucumber"] += 1
+	crop_inventory["Potato"] += 10
+	crop_inventory["Tomato"] += 1	
 	
 func add_score(val):
 	score += val
