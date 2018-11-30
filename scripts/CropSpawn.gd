@@ -66,6 +66,7 @@ func _harvest_completed():
 	stop_progress()
 	$HarvestAudio.play()
 	state = STATES.PLANT
+	GameState.add_score(1)
 
 func _on_CropSpawn_mouse_exited():
 	if progress_bar:

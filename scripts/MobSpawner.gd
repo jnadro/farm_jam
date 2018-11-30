@@ -49,7 +49,6 @@ func random_instance ():
 
 func _on_mob_die(mob):
 	var GameState = get_parent().get_node("GameState")
-	GameState.add_score(10)
 	# Randomly spawn a seed inside a radius 10 circle
 	# around the mob position
 	var seed_spawn_radius = 10.0
