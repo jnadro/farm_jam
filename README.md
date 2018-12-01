@@ -9,6 +9,10 @@ Extremely loose hybrid of Stardew Valley and Hammerwatch.
 
 # Credits
 
+## Programming
+
+Kevin and Jason Nadro
+
 ## Pixel Art
 daneekklu [OpenGameArt Page](https://opengameart.org/users/daneeklu)
 
