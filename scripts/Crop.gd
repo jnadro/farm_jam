@@ -28,7 +28,6 @@ func _ready():
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage2.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage3.png"))
 	sprite_frames.add_frame("Grow", load(resource_path + "Stage4.png"))	
-	sprite_frames.add_frame("Grow", load(resource_path + crop_type + ".png"))
 	
 	var fps = sprite_frames.get_frame_count("Grow") / growth_time
 	sprite_frames.set_animation_speed("Grow", fps )
