@@ -9,11 +9,17 @@ Extremely loose hybrid of Stardew Valley and Hammerwatch.
 
 # Credits
 
+## Pixel Art
+daneekklu [OpenGameArt Page](https://opengameart.org/users/daneeklu)
+
+- [Farm tilesets and UI](https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements)
+- [LPC Farm Animals](https://opengameart.org/content/lpc-style-farm-animals)
+
 ## Audio
 
 Music by Snabisch! [License](https://creativecommons.org/licenses/by/3.0/)
-    * [Support Snabisch on Patreon](https://www.patreon.com/Snabisch)
-    * [OpenGameArt](https://opengameart.org/users/snabisch)
+- [Support Snabisch on Patreon](https://www.patreon.com/Snabisch)
+- [OpenGameArt](https://opengameart.org/users/snabisch)
 
 - Main Menu Music [The Village](https://opengameart.org/content/the-village-nes-version)
 - Game Music [The Pulse of Life](https://opengameart.org/content/the-pulse-of-life)
